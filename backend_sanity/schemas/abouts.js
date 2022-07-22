@@ -4,6 +4,12 @@ export default{
     type: 'document',
     fields:[
         {
+            name: "order",
+            title: "Order",
+            type: "number",
+            hidden: true,
+        },
+        {
             name:'title',
             title:'Title',
             type:'string'
