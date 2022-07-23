@@ -55,7 +55,7 @@ const Skills = () => {
                             <div className='app__skills-exp-year'>
                                 <p className='bold-text'>{experience.year}</p>
                             </div>
-                            <motion.div>
+                            <motion.div className='app__skills-exp-works'>
                                 {experience?.works?.map((work) => (
                                      <>
                                         <motion.div
@@ -91,4 +91,4 @@ const Skills = () => {
     );
 };
 
-export default Skills;
+export default AppWrap(Skills, 'skills');
