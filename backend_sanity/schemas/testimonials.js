@@ -15,12 +15,12 @@ export default  {
             type: 'string'
         },
         {
-            name: 'imageUrl',
-            title: 'ImgURL',
+            name:'imgurl',
+            title:'ImgUrl',
             type: 'image',
             options: {
-                hotspot: true
-            }
+                hotspot: true,
+            },
         },
         {
             name: 'feedback',

@@ -15,6 +15,12 @@ export default{
             name:'name',
             title:'Name',
             type:'string'
+        },
+        {
+            name: "order",
+            title: "Order",
+            type: "number",
+            hidden: true,
         }
     ]
 }
