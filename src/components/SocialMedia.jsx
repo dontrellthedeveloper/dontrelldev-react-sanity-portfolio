@@ -5,15 +5,15 @@ import {FaFacebookF} from "react-icons/fa";
 const SocialMedia = () => {
     return (
         <div className='app__social'>
-            <div>
+            <a href="https://twitter.com/dontrellthedev_" target='_blank'>
                 <BsTwitter/>
-            </div>
-            <div>
+            </a>
+            <a href='https://www.facebook.com/dontrellwashington20' target='_blank'>
                 <FaFacebookF/>
-            </div>
-            <div>
+            </a>
+            <a href='https://www.instagram.com/dontrellthedeveloper' target='_blank'>
                 <BsInstagram/>
-            </div>
+            </a>
         </div>
     );
 };
