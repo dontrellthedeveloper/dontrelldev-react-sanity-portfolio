@@ -107,15 +107,18 @@ const VideoHeader = () => {
                     {abouts.map((about, index) => (
                             <motion.div
                                 whileInView={{opacity: 1}}
-                                whileHover={{scale: 1.1}}
+                                // whileHover={{scale: 1.1}}
                                 transition={{duration: 0.5, type: 'tween'}}
                                 className="video__profile-item"
                                 key={about.title + index}
                             >
                                 <div className='video__about-item'>
                                     <img src={urlFor(about.imgUrl)} alt={about.title}/>
-                                    <h2 className="bold-text" style={{marginTop: 20}}>{about.title}</h2>
-                                    <p className="p-text" style={{marginTop: 10}}>{about.description}</p>
+                                    <h2 className="p-text video__card-text" style={{marginTop: 20, textAlign: 'center'}}>{about.title}</h2>
+                                    <p className="video__card-desc" style={{marginTop: 10}}>{about.description}</p>
+                                    {/*<div className='video__work-tag video__flex'>*/}
+                                    {/*    <p className='p-text'>{about.title}</p>*/}
+                                    {/*</div>*/}
                                 </div>
                             </motion.div>
 
