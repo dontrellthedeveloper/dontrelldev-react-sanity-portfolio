@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {AiFillEye, AiFillGithub} from "react-icons/ai";
+import {AiFillEye, AiFillGithub, AiOutlineLink} from "react-icons/ai";
 
 import {motion} from 'framer-motion';
 
@@ -78,7 +78,8 @@ const Work = () => {
                                         transition={{duration: 0.25}}
                                         className='app__flex'
                                     >
-                                        <AiFillEye/>
+                                        {/*<AiFillEye/>*/}
+                                        <AiOutlineLink/>
                                     </motion.div>
                                 </a>
                                 <a href={work.codeLink} target='_blank' rel="noreferrer">

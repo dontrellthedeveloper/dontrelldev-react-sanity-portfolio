@@ -5,7 +5,7 @@ import {AppWrap, MotionWrap, VideoWrap} from "../../wrapper";
 import {motion} from "framer-motion";
 import {images} from "../../constants";
 import {client, urlFor} from "../../client";
-import {AiFillEye, AiFillGithub} from "react-icons/ai";
+import {AiFillEye, AiFillGithub, AiOutlineLink} from "react-icons/ai";
 
 
 
@@ -112,10 +112,40 @@ const VideoHeader = () => {
                                 className="video__profile-item"
                                 key={about.title + index}
                             >
-                                <div className='video__about-item'>
-                                    <img src={urlFor(about.imgUrl)} alt={about.title}/>
-                                    <h2 className="p-text video__card-text" style={{marginTop: 20, textAlign: 'center'}}>{about.title}</h2>
-                                    <p className="video__card-desc" style={{marginTop: 10}}>{about.description}</p>
+                                <div className='video__about-item '>
+                                    <div className='video__work-img video__flex'>
+                                        <img src={urlFor(about.imgUrl)} alt={about.title}/>
+                                        <motion.div
+                                            whileHover={{opacity: [0,1]}}
+                                            transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
+                                            className='video__work-hover video__flex'
+                                        >
+                                            <a href='#' target='_blank' rel="noreferrer">
+                                                <motion.div
+                                                    whileInView={{scale: [0, 1]}}
+                                                    whileHover={{scale: [1,0.9]}}
+                                                    transition={{duration: 0.25}}
+                                                    className='video__flex'
+                                                >
+                                                    {/*<AiFillEye/>*/}
+                                                    <AiOutlineLink/>
+                                                </motion.div>
+                                            </a>
+                                            {/*<a href='#' target='_blank' rel="noreferrer">*/}
+                                            {/*    <motion.div*/}
+                                            {/*        whileInView={{scale: [0, 1]}}*/}
+                                            {/*        whileHover={{scale: [1,0.9]}}*/}
+                                            {/*        transition={{duration: 0.25}}*/}
+                                            {/*        className='video__flex'*/}
+                                            {/*    >*/}
+                                            {/*        <AiFillGithub/>*/}
+                                            {/*    </motion.div>*/}
+                                            {/*</a>*/}
+                                        </motion.div>
+                                        <h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>{about.title}</h2>
+                                    </div>
+                                    {/*<h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>{about.title}</h2>*/}
+                                    <p className="video__card-desc bold-text" style={{marginTop: 20}}>{about.description}</p>
                                     {/*<div className='video__work-tag video__flex'>*/}
                                     {/*    <p className='p-text'>{about.title}</p>*/}
                                     {/*</div>*/}
