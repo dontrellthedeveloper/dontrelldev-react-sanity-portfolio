@@ -1,16 +1,191 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import videoBg from '../../assets/websitewarehouse10.mp4';
 import './VideoHeader.scss';
 import {AppWrap, MotionWrap, VideoWrap} from "../../wrapper";
+import {motion} from "framer-motion";
+import {images} from "../../constants";
+import {client, urlFor} from "../../client";
+import {AiFillEye, AiFillGithub} from "react-icons/ai";
+
+
+
+
+const scaleVariants = {
+    whileInView: {
+        scale: [0,1],
+        opacity: [0,1],
+        transition: {
+            duration: 1,
+            ease: 'easeInOut'
+        }
+    }
+}
 
 const VideoHeader = () => {
+    const [abouts, setAbouts] = useState([]);
+
+    useEffect(() => {
+        const query = '*[_type == "abouts"] | order(order asc)';
+
+        client.fetch(query)
+            .then((data) => {
+                setAbouts(data)
+            })
+    },[])
+
+
     return (
         <div className='video-bg'>
             <div className="video-overlay"></div>
             <video src={videoBg} autoPlay loop muted/>
+
             <div className="video-text">
-                <h1>👋👨🏾‍💻</h1>
-                <h3>Hi, I'm Dontrell</h3>
+
+                <h2 className='video-head-text'>
+                    {/*I know That <span>Good Apps</span><br/>means <span>Good Business</span>*/}
+
+                    <motion.div
+                        whileInView={{x: [-100,0], opacity: [0,1]}}
+                        transition={{duration: 0.5}}
+                        className='video__header-info'
+                    >
+                        <div className='video__header-badge'>
+                            <div className='badge-cmp video__flex'>
+                                <span>👋</span>
+                                <div style={{marginLeft: 20}}>
+                                    <p className='p-text'>Hello, I'm</p>
+                                    <h1 className='head-text'>Dontrell</h1>
+                                </div>
+                            </div>
+
+                            {/*<div className='tag-cmp video__flex'>*/}
+                            {/*    <p className='p-text'>Web Developer</p>*/}
+                            {/*    <p className='p-text'>Mobile Developer</p>*/}
+                            {/*</div>*/}
+                        </div>
+                    </motion.div>
+                </h2>
+                {/*<motion.div*/}
+                {/*    whileInView={{x: [-100,0], opacity: [0,1]}}*/}
+                {/*    transition={{duration: 0.5}}*/}
+                {/*    className='video__header-info'*/}
+                {/*>*/}
+                {/*    <div className='video__header-badge'>*/}
+                {/*        <div className='badge-cmp video__flex'>*/}
+                {/*            <span>👋</span>*/}
+                {/*            <div style={{marginLeft: 20}}>*/}
+                {/*                <p className='p-text'>Hello, I'm</p>*/}
+                {/*                <h1 className='head-text'>Dontrell</h1>*/}
+                {/*            </div>*/}
+                {/*        </div>*/}
+
+                {/*        <div className='tag-cmp video__flex'>*/}
+                {/*            <p className='p-text'>Web Developer</p>*/}
+                {/*            <p className='p-text'>Mobile Developer</p>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</motion.div>*/}
+
+                <motion.div
+                    whileInView={{opacity: [0,1]}}
+                    transition={{duration: 0.5, delayChildren: 0.5}}
+                    className='video__header-img'
+                >
+                    <img src={images.profile2} alt="profile_bg"/>
+                    <motion.img
+                        whileInView={{scale: [0,1]}}
+                        transition={{duration: 1, ease: 'easeInOut'}}
+                        className='overlay_circle'
+                        src={images.circle}
+                        alt='profile_cirle'
+                    />
+                </motion.div>
+
+
+
+                <div className='video__profiles'>
+                    {abouts.map((about, index) => (
+                            <motion.div
+                                whileInView={{opacity: 1}}
+                                whileHover={{scale: 1.1}}
+                                transition={{duration: 0.5, type: 'tween'}}
+                                className="video__profile-item"
+                                key={about.title + index}
+                            >
+                                <div className='video__about-item'>
+                                    <img src={urlFor(about.imgUrl)} alt={about.title}/>
+                                    <h2 className="bold-text" style={{marginTop: 20}}>{about.title}</h2>
+                                    <p className="p-text" style={{marginTop: 10}}>{about.description}</p>
+                                </div>
+                            </motion.div>
+
+
+
+
+
+                        // <div className='app__work-item app__flex' key={index}>
+                        //     <div className='app__work-img app__flex'>
+                        //         <img src={urlFor(about.imgUrl)} alt={about.title} />
+                        //
+                        //         <motion.div
+                        //         whileHover={{opacity: [0,1]}}
+                        //         transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
+                        //         className='app__work-hover app__flex'
+                        //         >
+                        //             <a href='#' target='_blank' rel="noreferrer">
+                        //                 <motion.div
+                        //                 whileInView={{scale: [0, 1]}}
+                        //                 whileHover={{scale: [1,0.9]}}
+                        //                 transition={{duration: 0.25}}
+                        //                 className='app__flex'
+                        //                 >
+                        //                     <AiFillEye/>
+                        //                 </motion.div>
+                        //             </a>
+                        //             <a href='#' target='_blank' rel="noreferrer">
+                        //                 <motion.div
+                        //                 whileInView={{scale: [0, 1]}}
+                        //                 whileHover={{scale: [1,0.9]}}
+                        //                 transition={{duration: 0.25}}
+                        //                 className='app__flex'
+                        //                 >
+                        //                     <AiFillGithub/>
+                        //                 </motion.div>
+                        //             </a>
+                        //         </motion.div>
+                        //     </div>
+                        //
+                        //     <div className='app__work-content app__flex'>
+                        //         <h4 className='bold-text'>{about.title}</h4>
+                        //         <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{about.description}</p>
+                        //
+                        //         <div className='app__work-tag app__flex'>
+                        //             <p className='p-text'>#</p>
+                        //         </div>
+                        //     </div>
+                        // </div>
+
+
+
+
+
+                    ))}
+                </div>
+
+                {/*<motion.div*/}
+                {/*    variants={scaleVariants}*/}
+                {/*    whileInView={scaleVariants.whileInView}*/}
+                {/*    className='video__header-circles'*/}
+                {/*>*/}
+                {/*    {[images.flutter, images.redux, images.sass].map((circle, index) => (*/}
+                {/*        <div className='circle-cmp app__flex' key={`circle-${index}`}>*/}
+                {/*            <img src={circle} alt="circle"/>*/}
+                {/*        </div>*/}
+                {/*    ))}*/}
+                {/*</motion.div>*/}
+
+                {/*<h1>👋👨🏾‍💻</h1>*/}
+                {/*<h3>Hi, I'm Dontrell</h3>*/}
             </div>
         </div>
     );
@@ -19,7 +194,9 @@ const VideoHeader = () => {
 // export default VideoHeader;
 
 export default VideoWrap(
-    MotionWrap(VideoHeader, 'app__video'),
+    MotionWrap(VideoHeader, 'app__about'),
     'home',
-    'app__primarybg'
+    'app__whitebg'
 );
+
+// export default VideoWrap(VideoHeader, 'home');

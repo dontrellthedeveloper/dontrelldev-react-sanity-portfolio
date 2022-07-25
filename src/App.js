@@ -9,9 +9,9 @@ const App = () => {
     return (
             <div className='app'>
                 <Navbar/>
-                {/*<VideoHeader/>*/}
-                <Header/>
-                <About/>
+                <VideoHeader/>
+                {/*<Header/>*/}
+                {/*<About/>*/}
                 <Work/>
                 <Skills/>
                 <Testimonial/>

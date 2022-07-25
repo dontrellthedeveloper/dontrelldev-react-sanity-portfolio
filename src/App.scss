@@ -136,6 +136,34 @@
     color: var(--black-color);
   }
 }
+
+
+
+
+.video-head-text {
+  font-size: 2.75rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--black-color);
+  text-transform: capitalize;
+  position: absolute;
+  top: 18%;
+
+  span {
+    color: var(--secondary-color);
+  }
+
+  @media screen and (min-width: 2000px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 2rem;
+  }
+}
+
+
+
 /* =============================
 |  |  | End of Video Wrap CSS
 ================================ */
