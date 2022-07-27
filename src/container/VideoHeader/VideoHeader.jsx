@@ -226,10 +226,6 @@ const VideoHeader = () => {
 
 // export default VideoHeader;
 
-export default VideoWrap(
-    MotionWrap(VideoHeader, 'app__about'),
-    'home',
-    'app__whitebg'
-);
+export default VideoWrap(VideoHeader, 'home');
 
 // export default VideoWrap(VideoHeader, 'home');
