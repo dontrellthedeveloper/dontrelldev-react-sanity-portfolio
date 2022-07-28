@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import videoBg from '../../assets/websitewarehouse10.mp4';
 import './VideoHeader.scss';
-import {AppWrap, MotionWrap, VideoWrap} from "../../wrapper";
+import { VideoWrap} from "../../wrapper";
 import {motion} from "framer-motion";
 import {images} from "../../constants";
 import {client, urlFor} from "../../client";
-import {AiFillEye, AiFillGithub, AiOutlineLink} from "react-icons/ai";
+import { AiOutlineLink} from "react-icons/ai";
 
 
 
@@ -120,17 +120,21 @@ const VideoHeader = () => {
                                             transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
                                             className='video__work-hover video__flex'
                                         >
-                                            <a href='#' target='_blank' rel="noreferrer">
-                                                <motion.div
-                                                    whileInView={{scale: [0, 1]}}
-                                                    whileHover={{scale: [1,0.9]}}
-                                                    transition={{duration: 0.25}}
-                                                    className='video__flex'
-                                                >
-                                                    {/*<AiFillEye/>*/}
-                                                    <AiOutlineLink/>
-                                                </motion.div>
-                                            </a>
+
+
+                                            {/*<a href='/' target='_blank' rel="noreferrer">*/}
+                                            {/*    <motion.div*/}
+                                            {/*        whileInView={{scale: [0, 1]}}*/}
+                                            {/*        whileHover={{scale: [1,0.9]}}*/}
+                                            {/*        transition={{duration: 0.25}}*/}
+                                            {/*        className='video__flex'*/}
+                                            {/*    >*/}
+                                            {/*        /!*<AiFillEye/>*!/*/}
+                                            {/*        <AiOutlineLink/>*/}
+                                            {/*    </motion.div>*/}
+                                            {/*</a>*/}
+
+
                                             {/*<a href='#' target='_blank' rel="noreferrer">*/}
                                             {/*    <motion.div*/}
                                             {/*        whileInView={{scale: [0, 1]}}*/}
