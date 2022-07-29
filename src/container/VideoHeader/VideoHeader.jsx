@@ -7,8 +7,9 @@ import {images} from "../../constants";
 import {client, urlFor} from "../../client";
 import { AiOutlineLink} from "react-icons/ai";
 
-
-
+import Div100vh from 'react-div-100vh'
+import { use100vh } from 'react-div-100vh'
+import AutoPlaySilentVideo from "../../components/VideoSilent";
 
 const scaleVariants = {
     whileInView: {
@@ -24,6 +25,8 @@ const scaleVariants = {
 const VideoHeader = () => {
     const [abouts, setAbouts] = useState([]);
 
+    const height = use100vh()
+
     useEffect(() => {
         const query = '*[_type == "abouts"] | order(order asc)';
 
@@ -35,11 +38,18 @@ const VideoHeader = () => {
 
 
     return (
-        <div className='video-bg'>
+        <Div100vh className='video-bg'>
             <div className="video-overlay"></div>
-            <video src={videoBg} autoPlay loop muted/>
+            <AutoPlaySilentVideo/>
+            {/*<div dangerouslySetInnerHTML={{*/}
+            {/*    __html: `<video autoplay loop muted playsinline>*/}
+            {/*                    <source src=${videoBg} type="video/mp4" />*/}
+            {/*                            Your browser does not support the video tag.*/}
+            {/*                     </video>`,*/}
+            {/*}}>*/}
 
-            <div className="video-text">
+            {/*</div>*/}
+            <Div100vh className="video-text">
 
                 <h2 className='video-head-text'>
                     {/*I know That <span>Good Apps</span><br/>means <span>Good Business</span>*/}
@@ -223,8 +233,8 @@ const VideoHeader = () => {
 
                 {/*<h1>👋👨🏾‍💻</h1>*/}
                 {/*<h3>Hi, I'm Dontrell</h3>*/}
-            </div>
-        </div>
+            </Div100vh>
+        </Div100vh>
     );
 };
 

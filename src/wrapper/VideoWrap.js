@@ -1,9 +1,10 @@
 import React from 'react';
 import {NavigationDots, SocialMedia, VideoDots, VideoSocialMedia} from '../components'
+import Div100vh from 'react-div-100vh';
 
 const VideoWrap = (Component, idName, classNames) => function HOC() {
     return (
-        <div id={idName} className={`video__container ${classNames}`}>
+        <Div100vh id={idName} className={`video__container ${classNames}`}>
             <VideoSocialMedia/>
             <div className='video__wrapper video__flex'>
                 <Component/>
@@ -14,7 +15,7 @@ const VideoWrap = (Component, idName, classNames) => function HOC() {
                 </div>
             </div>
             <VideoDots active={idName}/>
-        </div>
+        </Div100vh>
     );
 };
 
