@@ -58,13 +58,21 @@
   }
 }
 
-.app__footer-cards .app__footer-card:last-child {
+.app__footer-cards .app__footer-card {
   background-color: #f2f7fb;
 }
 
-.app__footer-cards .app__footer-card:last-child:hover {
+.app__footer-cards .app__footer-card {
   box-shadow: 0 0 25px #f2f7fb;
 }
+
+//.app__footer-cards .app__footer-card:last-child {
+//  background-color: #f2f7fb;
+//}
+//
+//.app__footer-cards .app__footer-card:last-child:hover {
+//  box-shadow: 0 0 25px #f2f7fb;
+//}
 
 .app__footer-form {
   width: 60%;

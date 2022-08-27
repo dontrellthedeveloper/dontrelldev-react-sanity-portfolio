@@ -31,6 +31,8 @@ import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
 import logo2 from '../assets/logo-2.png';
 import logo3 from '../assets/logo-3.png';
+import gmail from '../assets/gmail.png';
+import email2 from '../assets/email2.png';
 
 import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
@@ -42,6 +44,7 @@ import spotify from '../assets/spotify.png';
 
 export default {
     email,
+    email2,
     mobile,
     api,
     cpp,
@@ -49,6 +52,7 @@ export default {
     figma,
     flutter,
     git,
+    gmail,
     graphql,
     html,
     javascript,
