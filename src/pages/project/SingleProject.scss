@@ -46,8 +46,8 @@
   justify-content: center;
   align-items: center;
 
-  .app__work-item {
-    width: 270px;
+  .app__work-item2 {
+    width: 600px;
     flex-direction: column;
     margin: 2rem;
     padding: 1rem;
@@ -60,6 +60,11 @@
     &:hover {
       box-shadow: 0 0 25px rgba(0,0,0,0.2);
     }
+
+    @media(max-width: 767px) {
+      width: 100%;
+    }
+
 
     @media screen and (min-width: 2000px) {
       width: 470px;
@@ -74,9 +79,18 @@
   }
 }
 
-.app__work-img {
+.app__work-item-img {
+  display: flex;
+  max-width: 1200px;
+
+  @media(max-width: 767px) {
+    display: block;
+  }
+}
+
+.app__work-img2 {
   width: 100%;
-  height: 230px;
+  height: 100%;
   position: relative;
 
   img {
@@ -201,4 +215,8 @@ button {
     background-color: #a1a0a1;
     color: #fff;
   }
+}
+
+ul li::marker {
+  color: #fff;
 }

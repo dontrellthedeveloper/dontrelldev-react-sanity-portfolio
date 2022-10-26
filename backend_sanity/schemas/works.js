@@ -14,7 +14,15 @@ export default {
             title: 'Title',
             type: 'string',
         },
-
+        {
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug',
+            options: {
+                source: 'title',
+                maxLength: 96,
+            },
+        },
         {
             name: 'description',
             title: 'Description',
@@ -38,7 +46,40 @@ export default {
                 hotspot: true,
             },
         },
-
+        {
+            name: 'imgUrl2',
+            title: 'ImageUrl2',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        },
+        {
+            name: 'imgUrl3',
+            title: 'ImageUrl3',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        },
+        {
+            name: 'imgUrl4',
+            title: 'ImageUrl4',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        },
+        {
+            type: "markdown",
+            description: "A Github flavored markdown field with image uploading",
+            name: "bio"
+        },
+        {
+            type: "markdown",
+            description: "A Github flavored markdown field with image uploading",
+            name: "bio2"
+        },
         {
             name: 'tags',
             title: 'Tags',
