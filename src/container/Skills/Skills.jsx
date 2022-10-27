@@ -28,9 +28,9 @@ const Skills = () => {
     },[])
 
     return (
-        <>
+        <div style={{maxWidth: '1400px'}}>
             <h2 className='head-text'>Skills & Experience</h2>
-            <div className='app__skills-container'>
+            <div className='app__skills-container' style={{margin: '3rem auto'}}>
                 <motion.div className='app__skills-list'>
                     {skills?.map((skill) => (
                         <motion.div
@@ -87,7 +87,7 @@ const Skills = () => {
 
                 </motion.div>
             </div>
-        </>
+        </div>
     );
 };
 

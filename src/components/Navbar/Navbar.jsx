@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {HiMenuAlt4, HiX} from "react-icons/hi";
 import {motion} from 'framer-motion';
 
@@ -8,45 +8,57 @@ import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+    const [scroll, setScroll] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setScroll(window.scrollY > 50);
+        });
+    }, []);
 
     return (
-        <nav className='app__navbar'>
-            <div className='app__navbar-logo'>
-                <NavLink to='/'>
-                <img src={images.logo3} alt="logo"/>
-                </NavLink>
+        <nav className={scroll ? 'app__navbar-scroll' : 'app__navbar'}>
+            <div style={{display: 'flex', maxWidth: '1200px', width: '100%', margin: '0 auto'}}>
+                <div className='app__navbar-logo'>
+                    <NavLink to='/'>
+                        <img src={images.logoDark} alt="logo"/>
+                    </NavLink>
+                </div>
+                <ul className='app__navbar-links'>
+
+
+                    <li className='app__flex p-text'>
+                        {/*<div/>*/}
+                        <NavLink to='/'>Home
+                        </NavLink>
+                    </li>
+
+                    <li className='app__flex p-text'>
+                        {/*<div/>*/}
+                        <NavLink to='/portfolio'>Portfolio
+                        </NavLink>
+                    </li>
+
+                    <li className='app__flex p-text'>
+                        {/*<div/>*/}
+                        <NavLink to='/skills'>Skills
+                        </NavLink>
+                    </li>
+
+
+
+                    {/*{['home','about','work','skills','contact'].map((item)=> (*/}
+                    {/*{['home','work','skills','contact'].map((item)=> (*/}
+                    {/*    <li className='app__flex p-text' key={`link-${item}`}>*/}
+                    {/*        <div/>*/}
+                    {/*        <a href={`#${item}`}>{item}</a>*/}
+                    {/*    </li>*/}
+                    {/*))}*/}
+                </ul>
             </div>
-            <ul className='app__navbar-links'>
-
-
-                <li className='app__flex p-text'>
-                    <div/>
-                    <NavLink to='/'>Home
-                    </NavLink>
-                </li>
-
-                <li className='app__flex p-text'>
-                    <div/>
-                    <NavLink to='/portfolio'>Portfolio
-                    </NavLink>
-                </li>
-
-                <li className='app__flex p-text'>
-                    <div/>
-                    <NavLink to='/skills'>Skills
-                    </NavLink>
-                </li>
 
 
 
-                {/*{['home','about','work','skills','contact'].map((item)=> (*/}
-                {/*{['home','work','skills','contact'].map((item)=> (*/}
-                {/*    <li className='app__flex p-text' key={`link-${item}`}>*/}
-                {/*        <div/>*/}
-                {/*        <a href={`#${item}`}>{item}</a>*/}
-                {/*    </li>*/}
-                {/*))}*/}
-            </ul>
 
             <div className='app__navbar-menu'>
                 <HiMenuAlt4 onClick={() => setToggle(true)}/>

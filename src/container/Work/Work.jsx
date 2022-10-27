@@ -43,7 +43,7 @@ const Work = () => {
     }
 
     return (
-        <>
+        <div style={{maxWidth: '1400px'}}>
             <h2 className="head-text">My <span>Portfolio</span></h2>
 
             <div className='app__work-filter'>
@@ -151,12 +151,12 @@ const Work = () => {
 
                 ))}
             </motion.div>
-        </>
+        </div>
     );
 };
 
 export default AppWrap(
     MotionWrap(Work, 'app__works'),
     'work',
-    'app__primarybg'
+    'app__primarybg '
 );

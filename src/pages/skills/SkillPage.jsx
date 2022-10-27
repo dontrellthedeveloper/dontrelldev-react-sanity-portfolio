@@ -4,7 +4,7 @@ import './SkillPage.scss';
 
 const SkillPage = () => {
     return (
-        <div style={{paddingTop: '40px'}}>
+        <div style={{paddingTop: '40px', backgroundColor: '#fff'}}>
             <Skills/>
         </div>
     );

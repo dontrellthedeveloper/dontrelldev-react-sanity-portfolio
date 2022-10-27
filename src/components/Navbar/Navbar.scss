@@ -5,13 +5,29 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: .5rem 2rem;
+  //background: rgba(255, 255, 255, 0.25);
+  background: none;
+  //backdrop-filter: blur(4px);
+  //backdrop-filter: blur(10px);
+  //-webkit-backdrop-filter: blur(4px);
+  //border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
-  z-index: 1001;
+  z-index: 3001;
+}
+
+.app__navbar-scroll {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 2rem;
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  //border: 1px solid rgba(255, 255, 255, 0.18);
+  position: fixed;
+  z-index: 3001;
 }
 
 .app__navbar-logo {
@@ -22,7 +38,8 @@
     img {
       //width: 90px;
       //height: 20px ;
-      width: 120px;
+      //width: 120px;
+      width: 180px;
       //width: 176px;
 
       @media screen and (min-width: 2000px) {
@@ -38,12 +55,12 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  margin-right: 100px;
+  //margin-right: 100px;
+  margin-right: 160px;
 
   li {
     margin: 0 1rem;
     cursor: pointer;
-
     flex-direction: column;
 
     div {
@@ -56,16 +73,17 @@
     }
 
     a {
-      color: var(--gray-color);
+      //color: var(--gray-color);
+      color:  var(--secondary-color);
       text-decoration: none;
       flex-direction: column;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 800;
 
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        color:var(--secondary-color)
+        color: var(--gray-color)
       }
     }
 
@@ -80,6 +98,26 @@
     display: none;
   }
 }
+
+.app__navbar-links-scroll {
+  a {
+    //color: var(--gray-color);
+    color:var(--secondary-color);
+    //color:  #fff;
+    text-decoration: none;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      //color:var(--secondary-color)
+      color: var(--gray-color);
+    }
+  }
+}
+
 
 .app__navbar-menu {
   width: 35px;
