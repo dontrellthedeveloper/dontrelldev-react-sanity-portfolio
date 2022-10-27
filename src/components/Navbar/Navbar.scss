@@ -14,6 +14,10 @@
   //border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
   z-index: 3001;
+
+  @media(max-width: 767px) {
+    padding: .5rem 2rem .5rem .5rem;
+  }
 }
 
 .app__navbar-scroll {
@@ -28,6 +32,10 @@
   //border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
   z-index: 3001;
+
+  @media(max-width: 767px) {
+    padding: .5rem 2rem .5rem .5rem;
+  }
 }
 
 .app__navbar-logo {
