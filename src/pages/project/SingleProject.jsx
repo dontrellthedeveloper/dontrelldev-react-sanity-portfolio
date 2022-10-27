@@ -5,9 +5,9 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 import {client, urlFor} from "../../client";
-import {Link, useParams} from "react-router-dom";
+import {Link, useParams, useNavigate} from "react-router-dom";
 import {motion} from "framer-motion";
-import {AiFillGithub, AiOutlineLink} from "react-icons/ai";
+import {AiFillGithub, AiOutlineArrowLeft, AiOutlineLink} from "react-icons/ai";
 
 import './SingleProject.scss';
 
@@ -71,7 +71,12 @@ const SingleProject = () => {
             {/*)}*/}
             <div className='single-product__markdown2' style={{textAlign: 'center'}}>
                 <ReactMarkdown children={singleProject.bio2} remarkPlugins={[remarkGfm]} />
+                <Link to='/portfolio' className='work__all-projects'>
+                    <p style={{marginBottom: '20px'}}><AiOutlineArrowLeft/> All Projects</p>
+                </Link>
             </div>
+
+
 
 
                 <motion.div

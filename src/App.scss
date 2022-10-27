@@ -373,6 +373,10 @@
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+
+  @media(max-width: 767px) {
+    margin-bottom: 1rem;
+  }
 }
 
 .single-product__markdown2 {
@@ -382,4 +386,6 @@
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 0;
+
+
 }

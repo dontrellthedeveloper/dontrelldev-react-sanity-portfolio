@@ -58,21 +58,25 @@ const Navbar = () => {
                     >
                         <HiX onClick={() => setToggle(false)}/>
                         <ul>
+                            {/*{['home','about','work','skills','contact'].map((item)=> (*/}
+                            {/*    <li key={item}>*/}
+                            {/*        <a href={`#${item}`} onClick={() => setToggle(false)}>{item}</a>*/}
+                            {/*    </li>*/}
+                            {/*))}*/}
+                            <li>
 
-                            <li className='app__flex p-text'>
-                                <div/>
                                 <NavLink to='/' onClick={() => setToggle(false)}>Home
                                 </NavLink>
                             </li>
 
-                            <li className='app__flex p-text'>
-                                <div/>
+                            <li>
+
                                 <NavLink to='/portfolio' onClick={() => setToggle(false)}>Portfolio
                                 </NavLink>
                             </li>
 
-                            <li className='app__flex p-text'>
-                                <div/>
+                            <li>
+
                                 <NavLink to='/skills' onClick={() => setToggle(false)}>Skills
                                 </NavLink>
                             </li>

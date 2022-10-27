@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {AiFillEye, AiFillGithub, AiOutlineLink} from "react-icons/ai";
+import {AiFillChrome, AiFillEye, AiFillGithub, AiOutlineLink} from "react-icons/ai";
 
 import {motion} from 'framer-motion';
 
@@ -8,6 +8,7 @@ import {urlFor, client} from '../../client';
 
 import './Work.scss';
 import {Link} from "react-router-dom";
+import {TbListDetails} from "react-icons/tb";
 
 const Work = () => {
     const [activeFilter, setActiveFilter] = useState('All');
@@ -66,7 +67,9 @@ const Work = () => {
 
                         <div className='app__work-item app__flex' key={index} >
 
+                            <Link to={'/' + work.slug.current}>
                                 <div className='app__work-img app__flex'>
+
                                     <img src={urlFor(work.imgUrl)} alt={work.name} />
 
                                     <motion.div
@@ -74,19 +77,19 @@ const Work = () => {
                                         transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
                                         className='app__work-hover app__flex'
                                     >
-                                        {work.projectLink && (
-                                            <a href={work.projectLink} target='_blank' rel="noreferrer">
-                                                <motion.div
-                                                    whileInView={{scale: [0, 1]}}
-                                                    whileHover={{scale: [1,0.9]}}
-                                                    transition={{duration: 0.25}}
-                                                    className='app__flex'
-                                                >
-                                                    {/*<AiFillEye/>*/}
-                                                    <AiOutlineLink/>
-                                                </motion.div>
-                                            </a>
-                                        )}
+                                        {/*{work.projectLink && (*/}
+                                        {/*    <a href={work.projectLink} target='_blank' rel="noreferrer">*/}
+                                        {/*        <motion.div*/}
+                                        {/*            whileInView={{scale: [0, 1]}}*/}
+                                        {/*            whileHover={{scale: [1,0.9]}}*/}
+                                        {/*            transition={{duration: 0.25}}*/}
+                                        {/*            className='app__flex'*/}
+                                        {/*        >*/}
+                                        {/*            /!*<AiFillEye/>*!/*/}
+                                        {/*            <AiOutlineLink/>*/}
+                                        {/*        </motion.div>*/}
+                                        {/*    </a>*/}
+                                        {/*)}*/}
 
 
                                         {work.codeLink && (
@@ -97,20 +100,18 @@ const Work = () => {
                                                 transition={{duration: 0.25}}
                                                 className='app__flex'
                                             >
-                                                <AiFillGithub/>
+                                                <TbListDetails/>
                                             </motion.div>
                                         </a>
                                         )}
                                     </motion.div>
                                 </div>
 
+                            </Link>
 
 
                             <div className='app__work-content app__flex'>
-                                <div className='app__flex'>
-                                    <a href={work.projectLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiOutlineLink className='work__mobile-link-svg'/></div></a>
-                                    <a href={work.codeLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillGithub className='work__mobile-link-svg'/></div></a>
-                                </div>
+
 
                                 <Link to={'/' + work.slug.current} style={{textDecoration: 'none'}}>
                                 <h4 className='bold-text'>{work.title}</h4>
@@ -127,7 +128,10 @@ const Work = () => {
                                 {/*    </button>*/}
                                 {/*</Link>*/}
 
-
+                                <div className='app__flex'>
+                                    <a href={work.projectLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillChrome className='work__mobile-link-svg'/></div></a>
+                                    <a href={work.codeLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillGithub className='work__mobile-link-svg'/></div></a>
+                                </div>
 
                                 <div className='app__work-tag2 app__flex'>
                                     <Link to={'/' + work.slug.current} style={{textDecoration: 'none', fontWeight: '900'}} >
@@ -138,7 +142,7 @@ const Work = () => {
 
                                 <div className='app__work-tag app__flex'>
                                     <Link to={'/' + work.slug.current} style={{textDecoration: 'none', fontWeight: '900'}}>
-                                    <p className='p-text'>Click for More Details</p>
+                                    <p className='p-text'>Click for Details</p>
                                     </Link>
                                 </div>
 
