@@ -83,6 +83,18 @@
 
 }
 
+.video__card-text2 {
+  font-family: var(--font-base);
+  position: absolute;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: #fff;
+  top: -9px;
+  //top: 55%;
+  //margin-left: 50px;
+
+}
+
 
 .video__card-desc {
   font-size: 0.8rem;
@@ -330,9 +342,9 @@
   position: absolute;
   //top: 52%;
 
-  //@media screen and (max-width: 1095px) {
-  //  display: none;
-  //}
+  @media screen and (max-width: 1350px) {
+    max-width: 800px;
+  }
 
   @media screen and (max-width: 767px) {
     display: none;

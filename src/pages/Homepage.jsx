@@ -9,7 +9,7 @@ const Homepage = () => {
             <VideoHeader/>
             <Work/>
             <Skills/>
-            <Testimonial/>
+            {/*<Testimonial/>*/}
         </>
     );
 };

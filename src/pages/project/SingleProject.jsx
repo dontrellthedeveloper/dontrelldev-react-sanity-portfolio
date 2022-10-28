@@ -7,7 +7,7 @@ import remarkGfm from 'remark-gfm'
 import {client, urlFor} from "../../client";
 import {Link, useParams, useNavigate} from "react-router-dom";
 import {motion} from "framer-motion";
-import {AiFillGithub, AiOutlineArrowLeft, AiOutlineLink} from "react-icons/ai";
+import {AiFillChrome, AiFillGithub, AiOutlineArrowLeft, AiOutlineLink} from "react-icons/ai";
 
 import './SingleProject.scss';
 
@@ -101,7 +101,7 @@ const SingleProject = () => {
                                         className='app__flex'
                                     >
                                         {/*<AiFillEye/>*/}
-                                        <AiOutlineLink/>
+                                        <AiFillChrome/>
                                     </motion.div>
                                 </a>
                                 <a href={singleProject.codeLink} target='_blank' rel="noreferrer">
@@ -174,7 +174,7 @@ const SingleProject = () => {
                                         className='app__flex'
                                     >
                                         {/*<AiFillEye/>*/}
-                                        <AiOutlineLink/>
+                                        <AiFillChrome/>
                                     </motion.div>
                                 </a>
                                 <a href={singleProject.codeLink} target='_blank' rel="noreferrer">
@@ -237,7 +237,7 @@ const SingleProject = () => {
                                         className='app__flex'
                                     >
                                         {/*<AiFillEye/>*/}
-                                        <AiOutlineLink/>
+                                        <AiFillChrome/>
                                     </motion.div>
                                 </a>
                                 <a href={singleProject.codeLink} target='_blank' rel="noreferrer">

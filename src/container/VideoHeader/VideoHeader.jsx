@@ -5,7 +5,7 @@ import { VideoWrap} from "../../wrapper";
 import {motion} from "framer-motion";
 import {images} from "../../constants";
 import {client, urlFor} from "../../client";
-import { AiOutlineLink} from "react-icons/ai";
+import {AiFillGithub, AiOutlineLink} from "react-icons/ai";
 
 import Div100vh from 'react-div-100vh'
 import { use100vh } from 'react-div-100vh'
@@ -60,13 +60,13 @@ const VideoHeader = () => {
                         className='video__header-info'
                     >
                         <div className='video__header-badge'>
-                            <div className='badge-cmp video__flex'>
-                                <span>👋</span>
-                                <div style={{marginLeft: 20}}>
-                                    <p className='p-text'>Hello, I'm</p>
-                                    <h1 className='head-text'>Dontrell</h1>
-                                </div>
-                            </div>
+                            {/*<div className='badge-cmp video__flex'>*/}
+                            {/*    <span>👋</span>*/}
+                            {/*    <div style={{marginLeft: 20}}>*/}
+                            {/*        <p className='p-text'>Hello, I'm</p>*/}
+                            {/*        <h1 className='head-text'>Dontrell</h1>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
 
                             {/*<div className='tag-cmp video__flex'>*/}
                             {/*    <p className='p-text'>Web Developer</p>*/}
@@ -145,21 +145,25 @@ const VideoHeader = () => {
                                             {/*</a>*/}
 
 
-                                            {/*<a href='#' target='_blank' rel="noreferrer">*/}
-                                            {/*    <motion.div*/}
-                                            {/*        whileInView={{scale: [0, 1]}}*/}
-                                            {/*        whileHover={{scale: [1,0.9]}}*/}
-                                            {/*        transition={{duration: 0.25}}*/}
-                                            {/*        className='video__flex'*/}
-                                            {/*    >*/}
-                                            {/*        <AiFillGithub/>*/}
-                                            {/*    </motion.div>*/}
-                                            {/*</a>*/}
+                                            <a href='https://github.com/dontrellthedeveloper' target='_blank' rel="noreferrer">
+                                                <motion.div
+                                                    whileInView={{scale: [0, 1]}}
+                                                    whileHover={{scale: [1,0.9]}}
+                                                    transition={{duration: 0.25}}
+                                                    className='video__flex'
+                                                >
+                                                    <AiFillGithub/>
+                                                </motion.div>
+                                            </a>
                                         </motion.div>
-                                        <h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>{about.title}</h2>
+                                        <h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>{about.title}
+                                        </h2>
+
+                                        {/*<h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>Visit GitHub*/}
+                                        {/*</h2>*/}
                                     </div>
                                     {/*<h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>{about.title}</h2>*/}
-                                    <p className="video__card-desc bold-text" style={{marginTop: 20}}>{about.description}</p>
+                                    {/*<p className="video__card-desc bold-text" style={{marginTop: 20}}>{about.description}</p>*/}
                                     {/*<div className='video__work-tag video__flex'>*/}
                                     {/*    <p className='p-text'>{about.title}</p>*/}
                                     {/*</div>*/}

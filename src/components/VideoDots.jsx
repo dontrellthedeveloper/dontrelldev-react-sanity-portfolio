@@ -3,7 +3,7 @@ import React from 'react';
 const NavigationDots = ({active}) => {
     return (
         <div className='video__navigation'>
-            {['home','work','skills','testimonials','contact'].map((item, index)=> (
+            {['home','work','skills','contact'].map((item, index)=> (
                 <a
                     key={item + index}
                     href={`#${item}`}
