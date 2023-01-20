@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {HashRouter as Router, Routes, Route} from "react-router-dom";
 
 import {Footer, Skills, Testimonial, Work} from './container';
 import Homepage from "./pages/Homepage";
