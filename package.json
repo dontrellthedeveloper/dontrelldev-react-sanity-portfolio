@@ -1,7 +1,6 @@
 {
   "name": "fontend_react",
   "version": "0.1.0",
-  "homepage": ".",
   "private": true,
   "dependencies": {
     "@sanity/client": "^2.23.2",
@@ -46,5 +45,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "."
 }

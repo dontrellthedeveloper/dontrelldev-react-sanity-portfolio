@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-import {HashRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import {Footer, Skills, Testimonial, Work} from './container';
 import Homepage from "./pages/Homepage";
@@ -30,7 +30,7 @@ const App = () => {
                 </Helmet>
                 <Navbar/>
                 <Routes>
-                    <Route path='/' element={<Homepage/>} exact />
+                    <Route exact path='/' element={<Homepage/>} />
                     <Route path='/:slug' element={<SingleProject/>} />
                     <Route path='/portfolio' element={<WorkPage/>} />
                     <Route path='/skills' element={<SkillPage/>} />
