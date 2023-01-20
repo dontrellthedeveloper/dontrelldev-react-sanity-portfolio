@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - aws cloudfront create-invalidation --distribution-id EA5VDLUL1UM5G --path /\*
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: build

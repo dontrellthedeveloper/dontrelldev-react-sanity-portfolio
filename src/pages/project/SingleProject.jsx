@@ -10,6 +10,7 @@ import {motion} from "framer-motion";
 import {AiFillChrome, AiFillGithub, AiOutlineArrowLeft, AiOutlineLink} from "react-icons/ai";
 
 import './SingleProject.scss';
+import {Helmet} from "react-helmet";
 
 const SingleProject = () => {
     const [singleProject, setSingleProject] = useState(null);
@@ -64,11 +65,19 @@ const SingleProject = () => {
 
     return (
         <div>
-            {/*{singleProject.imgUrl && (*/}
-            {/*    <div>*/}
-            {/*        <img src={urlFor(singleProject.imgUrl).width(800).height(800).url()}/>*/}
-            {/*    </div>*/}
-            {/*)}*/}
+            <Helmet>
+                <title>{singleProject.title}</title>
+                <meta
+                    name='description'
+                    content={singleProject.description}
+                />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="180x180"
+                    // href="%PUBLIC_URL%/logo152.png"
+                    href={urlFor(singleProject.imgUrl).width(800).height(800).url()}
+                />
+            </Helmet>
             <div className='single-product__markdown2' style={{textAlign: 'center'}}>
                 <ReactMarkdown children={singleProject.bio2} remarkPlugins={[remarkGfm]} />
                 <Link to='/portfolio' className='work__all-projects'>
