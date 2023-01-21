@@ -11,6 +11,11 @@ import experiences from './experiences'
 import skills from './skills'
 import workExperience from './workExperience'
 import contact from './contact'
+import skillsFrontEnd from "./skillsFrontEnd";
+import skillsBackEnd from "./skillsBackEnd";
+import skillsDatabase from "./skillsDatabase";
+import skillsCloud from "./skillsCloud";
+import certifications from "./certifications";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,6 +25,6 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
-      works, testimonials, brands, abouts, skills, workExperience, experiences, contact
+      works, testimonials, brands, abouts, skills, workExperience, experiences, contact, skillsFrontEnd, skillsBackEnd, skillsDatabase, skillsCloud, certifications
   ]),
 })
