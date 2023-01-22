@@ -10,6 +10,8 @@ import {AiFillGithub, AiOutlineLink} from "react-icons/ai";
 import Div100vh from 'react-div-100vh'
 import { use100vh } from 'react-div-100vh'
 import AutoPlaySilentVideo from "../../components/VideoSilent";
+import {Link} from "react-router-dom";
+import {TbListDetails} from "react-icons/tb";
 
 const scaleVariants = {
     whileInView: {
@@ -24,6 +26,7 @@ const scaleVariants = {
 
 const VideoHeader = () => {
     const [abouts, setAbouts] = useState([]);
+    const [skills, setSkills] = useState([]);
 
     const height = use100vh()
 
@@ -36,8 +39,19 @@ const VideoHeader = () => {
             })
     },[])
 
+    useEffect(() => {
+        const query = '*[_type == "skills"] | order(order asc)';
+
+        client.fetch(query)
+            .then((data) => {
+                setSkills(data)
+            })
+    },[])
+
 
     return (
+
+
         <Div100vh className='video-bg'>
             <div className="video-overlay"></div>
             <AutoPlaySilentVideo/>
@@ -75,26 +89,7 @@ const VideoHeader = () => {
                         </div>
                     </motion.div>
                 </h2>
-                {/*<motion.div*/}
-                {/*    whileInView={{x: [-100,0], opacity: [0,1]}}*/}
-                {/*    transition={{duration: 0.5}}*/}
-                {/*    className='video__header-info'*/}
-                {/*>*/}
-                {/*    <div className='video__header-badge'>*/}
-                {/*        <div className='badge-cmp video__flex'>*/}
-                {/*            <span>👋</span>*/}
-                {/*            <div style={{marginLeft: 20}}>*/}
-                {/*                <p className='p-text'>Hello, I'm</p>*/}
-                {/*                <h1 className='head-text'>Dontrell</h1>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
 
-                {/*        <div className='tag-cmp video__flex'>*/}
-                {/*            <p className='p-text'>Web Developer</p>*/}
-                {/*            <p className='p-text'>Mobile Developer</p>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</motion.div>*/}
 
                 <motion.div
                     whileInView={{opacity: [0,1]}}
@@ -114,17 +109,18 @@ const VideoHeader = () => {
 
 
                 <div className='video__profiles'>
-                    {abouts.map((about, index) => (
+                    {skills.map((skill, index) => (
                             <motion.div
                                 whileInView={{opacity: 1}}
                                 // whileHover={{scale: 1.1}}
                                 transition={{duration: 0.5, type: 'tween'}}
                                 className="video__profile-item"
-                                key={about.title + index}
+                                key={skill.name + index}
                             >
+
                                 <div className='video__about-item '>
                                     <div className='video__work-img video__flex'>
-                                        <img src={urlFor(about.imgUrl)} alt={about.title}/>
+                                        <img src={urlFor(skill.imgUrl)} alt={skill.name}/>
                                         <motion.div
                                             whileHover={{opacity: [0,1]}}
                                             transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
@@ -132,31 +128,23 @@ const VideoHeader = () => {
                                         >
 
 
-                                            {/*<a href='/' target='_blank' rel="noreferrer">*/}
-                                            {/*    <motion.div*/}
-                                            {/*        whileInView={{scale: [0, 1]}}*/}
-                                            {/*        whileHover={{scale: [1,0.9]}}*/}
-                                            {/*        transition={{duration: 0.25}}*/}
-                                            {/*        className='video__flex'*/}
-                                            {/*    >*/}
-                                            {/*        /!*<AiFillEye/>*!/*/}
-                                            {/*        <AiOutlineLink/>*/}
-                                            {/*    </motion.div>*/}
-                                            {/*</a>*/}
+                                            {/*<a href='https://github.com/dontrellthedeveloper' target='_blank' rel="noreferrer">*/}
 
+                                                <Link to={'/skill/' + skill.slug.current}>
 
-                                            <a href='https://github.com/dontrellthedeveloper' target='_blank' rel="noreferrer">
                                                 <motion.div
                                                     whileInView={{scale: [0, 1]}}
                                                     whileHover={{scale: [1,0.9]}}
                                                     transition={{duration: 0.25}}
                                                     className='video__flex'
                                                 >
-                                                    <AiFillGithub/>
+                                                    <TbListDetails/>
                                                 </motion.div>
-                                            </a>
+
+                                                </Link>
+                                            {/*</a>*/}
                                         </motion.div>
-                                        <h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>{about.title}
+                                        <h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>{skill.description}
                                         </h2>
 
                                         {/*<h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>Visit GitHub*/}
@@ -239,6 +227,7 @@ const VideoHeader = () => {
                 {/*<h3>Hi, I'm Dontrell</h3>*/}
             </Div100vh>
         </Div100vh>
+
     );
 };
 

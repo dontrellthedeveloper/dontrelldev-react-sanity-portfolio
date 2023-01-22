@@ -64,10 +64,10 @@ const Skills = () => {
 
     return (
         <div style={{maxWidth: '1400px'}}>
-            <h2 className='head-text'>Development Skills</h2>
+            <h2 className='head-text'>Skills</h2>
             <div className='app__skills-container' style={{margin: '3rem auto'}}>
                 <div>
-                    <h4 className='head-text app__skills-heading'>Front-End Skills</h4>
+                    <h4 className='head-text app__skills-heading'>Front-End Development</h4>
                     <motion.div className='app__skills-list'>
                         {skillsFrontEnd?.map((skill) => (
                             <motion.div
@@ -86,7 +86,7 @@ const Skills = () => {
 
 
 
-                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Back-End Skills</h4>
+                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Back-End Development</h4>
                     <motion.div className='app__skills-list'>
                         {skillsBackEnd?.map((skill) => (
                             <motion.div
@@ -103,7 +103,7 @@ const Skills = () => {
                         ))}
                     </motion.div>
 
-                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Database Skills</h4>
+                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Database Development</h4>
                     <motion.div className='app__skills-list'>
                         {skillsDatabase?.map((skill) => (
                             <motion.div
@@ -121,7 +121,7 @@ const Skills = () => {
                     </motion.div>
 
 
-                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Cloud Skills</h4>
+                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Cloud Development</h4>
                     <motion.div className='app__skills-list'>
                         {skillsCloud?.map((skill) => (
                             <motion.div
