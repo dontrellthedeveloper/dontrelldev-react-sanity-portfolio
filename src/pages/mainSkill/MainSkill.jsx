@@ -289,7 +289,7 @@ const MainSkill = () => {
                 <div className='app__skills-container' style={{margin: '3rem auto'}}>
                     <div>
 
-                        {mainSkill.slug.current === 'frontend-skills' && (
+                        {mainSkill.slug.current === 'frontend' && (
                             <>
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Front-End Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
@@ -312,7 +312,7 @@ const MainSkill = () => {
                         )}
 
 
-                        {mainSkill.slug.current === 'backend-skills' && (
+                        {mainSkill.slug.current === 'backend' && (
                             <>
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Back-End Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
@@ -335,7 +335,7 @@ const MainSkill = () => {
                         )}
 
 
-                        {mainSkill.slug.current === 'database-skills' && (
+                        {mainSkill.slug.current === 'database' && (
                             <>
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Database Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
@@ -358,7 +358,7 @@ const MainSkill = () => {
                         )}
 
 
-                        {mainSkill.slug.current === 'cloud-skills' && (
+                        {mainSkill.slug.current === 'cloud' && (
                             <>
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Cloud Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>

@@ -12,6 +12,7 @@ import WorkPage from "./pages/work/WorkPage";
 import SkillPage from "./pages/skills/SkillPage";
 import {Helmet} from "react-helmet";
 import MainSkill from "./pages/mainSkill/MainSkill";
+import SingleSkill from "./pages/skill/SingleSkill";
 
 const App = () => {
     return (
@@ -34,6 +35,7 @@ const App = () => {
                     <Route exact path='/' element={<Homepage/>} />
                     <Route path='/:slug' element={<SingleProject/>} />
                     <Route path='/skill/:slug' element={<MainSkill/>} />
+                    <Route path='/:slug/:slug' element={<SingleSkill/>} />
                     <Route path='/portfolio' element={<WorkPage/>} />
                     <Route path='/skills' element={<SkillPage/>} />
                 </Routes>
