@@ -107,7 +107,8 @@ const MainSkill = () => {
             <h4 className='head-text'  style={{marginTop: '30px', marginRight: '0', fontSize: '2rem'}}>{mainSkill.name}</h4>
 
             <div className='single-product__markdown2' style={{textAlign: 'center', padding: '1.5rem'}}>
-                <Link to='#' onClick={() => navigate(-1)} className='work__all-projects'>
+                {/*<Link to='#' onClick={() => navigate(-1)} className='work__all-projects'>*/}
+                <Link to='/skills' className='work__all-projects'>
                     <p><AiOutlineArrowLeft/> All Skills</p>
                 </Link>
             </div>
@@ -181,108 +182,6 @@ const MainSkill = () => {
 
 
 
-            {/*<div style={{maxWidth: '1400px'}}>*/}
-            {/*    <div className='app__skills-container' style={{margin: '3rem auto'}}>*/}
-            {/*        <div>*/}
-
-            {/*            {mainSkill.slug.current === 'frontend-skills' && (*/}
-            {/*                <>*/}
-            {/*                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Front-End Skills</h4>*/}
-            {/*                    <motion.div className='app__skills-list' style={{marginRight: '0'}}>*/}
-            {/*                        {skillsFrontEnd?.map((skill) => (*/}
-            {/*                            <motion.div*/}
-            {/*                                whileInView={{opacity: [0,1]}}*/}
-            {/*                                transition={{duration: 0.5}}*/}
-            {/*                                className='app__skills-item app__flex'*/}
-            {/*                                key={skill.name}*/}
-            {/*                            >*/}
-            {/*                                <div className='app__flex' style={{backgroundColor: skill.bgColor}}>*/}
-            {/*                                    <img src={urlFor(skill.icon)} alt={skill.name}/>*/}
-            {/*                                </div>*/}
-            {/*                                <p className='p-text'>{skill.name}</p>*/}
-            {/*                            </motion.div>*/}
-            {/*                        ))}*/}
-            {/*                    </motion.div>*/}
-            {/*                </>*/}
-
-            {/*                )}*/}
-
-
-            {/*            {mainSkill.slug.current === 'backend-skills' && (*/}
-            {/*                <>*/}
-            {/*                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Back-End Skills</h4>*/}
-            {/*            <motion.div className='app__skills-list' style={{marginRight: '0'}}>*/}
-            {/*                {skillsBackEnd?.map((skill) => (*/}
-            {/*                    <motion.div*/}
-            {/*                        whileInView={{opacity: [0,1]}}*/}
-            {/*                        transition={{duration: 0.5}}*/}
-            {/*                        className='app__skills-item app__flex'*/}
-            {/*                        key={skill.name}*/}
-            {/*                    >*/}
-            {/*                        <div className='app__flex' style={{backgroundColor: skill.bgColor}}>*/}
-            {/*                            <img src={urlFor(skill.icon)} alt={skill.name}/>*/}
-            {/*                        </div>*/}
-            {/*                        <p className='p-text'>{skill.name}</p>*/}
-            {/*                    </motion.div>*/}
-            {/*                ))}*/}
-            {/*            </motion.div>*/}
-            {/*                </>*/}
-
-            {/*            )}*/}
-
-
-            {/*            {mainSkill.slug.current === 'database-skills' && (*/}
-            {/*                <>*/}
-            {/*                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Database Skills</h4>*/}
-            {/*            <motion.div className='app__skills-list' style={{marginRight: '0'}}>*/}
-            {/*                {skillsDatabase?.map((skill) => (*/}
-            {/*                    <motion.div*/}
-            {/*                        whileInView={{opacity: [0,1]}}*/}
-            {/*                        transition={{duration: 0.5}}*/}
-            {/*                        className='app__skills-item app__flex'*/}
-            {/*                        key={skill.name}*/}
-            {/*                    >*/}
-            {/*                        <div className='app__flex' style={{backgroundColor: skill.bgColor}}>*/}
-            {/*                            <img src={urlFor(skill.icon)} alt={skill.name}/>*/}
-            {/*                        </div>*/}
-            {/*                        <p className='p-text'>{skill.name}</p>*/}
-            {/*                    </motion.div>*/}
-            {/*                ))}*/}
-            {/*            </motion.div>*/}
-            {/*                </>*/}
-
-            {/*            )}*/}
-
-
-            {/*            {mainSkill.slug.current === 'cloud-skills' && (*/}
-            {/*                <>*/}
-            {/*            <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Cloud Skills</h4>*/}
-            {/*            <motion.div className='app__skills-list' style={{marginRight: '0'}}>*/}
-            {/*                {skillsCloud?.map((skill) => (*/}
-            {/*                    <motion.div*/}
-            {/*                        whileInView={{opacity: [0,1]}}*/}
-            {/*                        transition={{duration: 0.5}}*/}
-            {/*                        className='app__skills-item app__flex'*/}
-            {/*                        key={skill.name}*/}
-            {/*                    >*/}
-            {/*                        <div className='app__flex' style={{backgroundColor: skill.bgColor}}>*/}
-            {/*                            <img src={urlFor(skill.icon)} alt={skill.name}/>*/}
-            {/*                        </div>*/}
-            {/*                        <p className='p-text' style={{fontSize: '11px'}}>{skill.name}</p>*/}
-            {/*                    </motion.div>*/}
-            {/*                ))}*/}
-            {/*            </motion.div>*/}
-            {/*                </>*/}
-
-            {/*            )}*/}
-            {/*        </div>*/}
-
-
-
-            {/*    </div>*/}
-            {/*</div>*/}
-
-
 
             <div className='main-skills__items' style={{textAlign: 'center'}}>
                 {/*<ReactMarkdown children={singleProject.bio} remarkPlugins={[remarkGfm]} />*/}
@@ -294,17 +193,19 @@ const MainSkill = () => {
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Front-End Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
                                     {skillsFrontEnd?.map((skill) => (
-                                        <motion.div
-                                            whileInView={{opacity: [0,1]}}
-                                            transition={{duration: 0.5}}
-                                            className='app__skills-item app__flex'
-                                            key={skill.name}
-                                        >
-                                            <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
-                                                <img src={urlFor(skill.icon)} alt={skill.name}/>
-                                            </div>
-                                            <p className='p-text'>{skill.name}</p>
-                                        </motion.div>
+                                        <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                                            <motion.div
+                                                whileInView={{opacity: [0,1]}}
+                                                transition={{duration: 0.5}}
+                                                className='app__skills-item app__flex'
+                                                key={skill.name}
+                                            >
+                                                <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
+                                                    <img src={urlFor(skill.icon)} alt={skill.name}/>
+                                                </div>
+                                                <p className='p-text skill-name_overflow'>{skill.name}</p>
+                                            </motion.div>
+                                        </Link>
                                     ))}
                                 </motion.div>
                             </>
@@ -317,17 +218,19 @@ const MainSkill = () => {
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Back-End Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
                                     {skillsBackEnd?.map((skill) => (
-                                        <motion.div
-                                            whileInView={{opacity: [0,1]}}
-                                            transition={{duration: 0.5}}
-                                            className='app__skills-item app__flex'
-                                            key={skill.name}
-                                        >
-                                            <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
-                                                <img src={urlFor(skill.icon)} alt={skill.name}/>
-                                            </div>
-                                            <p className='p-text'>{skill.name}</p>
-                                        </motion.div>
+                                        <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                                            <motion.div
+                                                whileInView={{opacity: [0,1]}}
+                                                transition={{duration: 0.5}}
+                                                className='app__skills-item app__flex'
+                                                key={skill.name}
+                                            >
+                                                <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
+                                                    <img src={urlFor(skill.icon)} alt={skill.name}/>
+                                                </div>
+                                                <p className='p-text skill-name_overflow'>{skill.name}</p>
+                                            </motion.div>
+                                        </Link>
                                     ))}
                                 </motion.div>
                             </>
@@ -340,17 +243,19 @@ const MainSkill = () => {
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Database Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
                                     {skillsDatabase?.map((skill) => (
-                                        <motion.div
-                                            whileInView={{opacity: [0,1]}}
-                                            transition={{duration: 0.5}}
-                                            className='app__skills-item app__flex'
-                                            key={skill.name}
-                                        >
-                                            <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
-                                                <img src={urlFor(skill.icon)} alt={skill.name}/>
-                                            </div>
-                                            <p className='p-text'>{skill.name}</p>
-                                        </motion.div>
+                                        <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                                            <motion.div
+                                                whileInView={{opacity: [0,1]}}
+                                                transition={{duration: 0.5}}
+                                                className='app__skills-item app__flex'
+                                                key={skill.name}
+                                            >
+                                                <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
+                                                    <img src={urlFor(skill.icon)} alt={skill.name}/>
+                                                </div>
+                                                <p className='p-text skill-name_overflow'>{skill.name}</p>
+                                            </motion.div>
+                                        </Link>
                                     ))}
                                 </motion.div>
                             </>
@@ -363,17 +268,19 @@ const MainSkill = () => {
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Cloud Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
                                     {skillsCloud?.map((skill) => (
-                                        <motion.div
-                                            whileInView={{opacity: [0,1]}}
-                                            transition={{duration: 0.5}}
-                                            className='app__skills-item app__flex'
-                                            key={skill.name}
-                                        >
-                                            <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
-                                                <img src={urlFor(skill.icon)} alt={skill.name}/>
-                                            </div>
-                                            <p className='p-text' style={{fontSize: '11px'}}>{skill.name}</p>
-                                        </motion.div>
+                                        <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                                            <motion.div
+                                                whileInView={{opacity: [0,1]}}
+                                                transition={{duration: 0.5}}
+                                                className='app__skills-item app__flex'
+                                                key={skill.name}
+                                            >
+                                                <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
+                                                    <img src={urlFor(skill.icon)} alt={skill.name}/>
+                                                </div>
+                                                <p className='p-text skill-name_overflow' style={{fontSize: '11px'}}>{skill.name}</p>
+                                            </motion.div>
+                                        </Link>
                                     ))}
                                 </motion.div>
                             </>
@@ -385,136 +292,6 @@ const MainSkill = () => {
 
                 </div>
             </div>
-
-
-            {/*<div className='app__work-item-img'>*/}
-
-            {/*    <motion.div*/}
-            {/*        animate={animateCard}*/}
-            {/*        transition={{duration: 0.5, delayChildren: 0.5}}*/}
-            {/*        className='app__work-portfolio'*/}
-            {/*    >*/}
-            {/*        <div className='app__work-item2 app__flex' style={{width: '100%'}}>*/}
-            {/*            <a href={singleProject.projectLink} target='_blank' rel="noreferrer">*/}
-            {/*                <div className='app__work-img2 app__flex'>*/}
-            {/*                    <img src={urlFor(singleProject.imgUrl3)} alt={singleProject.title} />*/}
-            {/*                    <motion.div*/}
-            {/*                        whileHover={{opacity: [0,1]}}*/}
-            {/*                        transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}*/}
-            {/*                        className='app__work-hover app__flex'*/}
-            {/*                    >*/}
-            {/*                        <a href={singleProject.projectLink} target='_blank' rel="noreferrer">*/}
-            {/*                            <motion.div*/}
-            {/*                                whileInView={{scale: [0, 1]}}*/}
-            {/*                                whileHover={{scale: [1,0.9]}}*/}
-            {/*                                transition={{duration: 0.25}}*/}
-            {/*                                className='app__flex'*/}
-            {/*                            >*/}
-            {/*                                /!*<AiFillEye/>*!/*/}
-            {/*                                <AiFillChrome/>*/}
-            {/*                            </motion.div>*/}
-            {/*                        </a>*/}
-            {/*                        <a href={singleProject.codeLink} target='_blank' rel="noreferrer">*/}
-            {/*                            <motion.div*/}
-            {/*                                whileInView={{scale: [0, 1]}}*/}
-            {/*                                whileHover={{scale: [1,0.9]}}*/}
-            {/*                                transition={{duration: 0.25}}*/}
-            {/*                                className='app__flex'*/}
-            {/*                            >*/}
-            {/*                                <AiFillGithub/>*/}
-            {/*                            </motion.div>*/}
-            {/*                        </a>*/}
-            {/*                    </motion.div>*/}
-            {/*                </div>*/}
-            {/*            </a>*/}
-            {/*            <div className='app__work-content app__flex' style={{display: "none"}}>*/}
-            {/*                <div className='app__flex'>*/}
-            {/*                    <a href={singleProject.projectLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiOutlineLink className='work__mobile-link-svg'/></div></a>*/}
-            {/*                    <a href={singleProject.codeLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillGithub className='work__mobile-link-svg'/></div></a>*/}
-
-            {/*                </div>*/}
-            {/*                <h4 className='bold-text'>{singleProject.title}</h4>*/}
-            {/*                <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{singleProject.description}</p>*/}
-
-
-
-
-            {/*                /!*<div className='app__work-tag2 app__flex'>*!/*/}
-            {/*                /!*    <p className='p-text'>{singleProject.tags[0]}</p>*!/*/}
-            {/*                /!*</div>*!/*/}
-
-
-            {/*                /!*<div className='app__work-tag app__flex'>*!/*/}
-            {/*                /!*    <p className='p-text'>Click to visit Website</p>*!/*/}
-            {/*                /!*</div>*!/*/}
-
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </motion.div>*/}
-
-            {/*    <motion.div*/}
-            {/*        animate={animateCard}*/}
-            {/*        transition={{duration: 0.5, delayChildren: 0.5}}*/}
-            {/*        className='app__work-portfolio'*/}
-            {/*    >*/}
-            {/*        <div className='app__work-item2 app__flex' style={{width: '100%'}}>*/}
-            {/*            <a href={singleProject.projectLink} target='_blank' rel="noreferrer">*/}
-            {/*                <div className='app__work-img2 app__flex'>*/}
-            {/*                    <img src={urlFor(singleProject.imgUrl4)} alt={singleProject.title} />*/}
-            {/*                    <motion.div*/}
-            {/*                        whileHover={{opacity: [0,1]}}*/}
-            {/*                        transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}*/}
-            {/*                        className='app__work-hover app__flex'*/}
-            {/*                    >*/}
-            {/*                        <a href={singleProject.projectLink} target='_blank' rel="noreferrer">*/}
-            {/*                            <motion.div*/}
-            {/*                                whileInView={{scale: [0, 1]}}*/}
-            {/*                                whileHover={{scale: [1,0.9]}}*/}
-            {/*                                transition={{duration: 0.25}}*/}
-            {/*                                className='app__flex'*/}
-            {/*                            >*/}
-            {/*                                /!*<AiFillEye/>*!/*/}
-            {/*                                <AiFillChrome/>*/}
-            {/*                            </motion.div>*/}
-            {/*                        </a>*/}
-            {/*                        <a href={singleProject.codeLink} target='_blank' rel="noreferrer">*/}
-            {/*                            <motion.div*/}
-            {/*                                whileInView={{scale: [0, 1]}}*/}
-            {/*                                whileHover={{scale: [1,0.9]}}*/}
-            {/*                                transition={{duration: 0.25}}*/}
-            {/*                                className='app__flex'*/}
-            {/*                            >*/}
-            {/*                                <AiFillGithub/>*/}
-            {/*                            </motion.div>*/}
-            {/*                        </a>*/}
-            {/*                    </motion.div>*/}
-            {/*                </div>*/}
-            {/*            </a>*/}
-            {/*            <div className='app__work-content app__flex' style={{display: "none"}}>*/}
-            {/*                <div className='app__flex'>*/}
-            {/*                    <a href={singleProject.projectLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiOutlineLink className='work__mobile-link-svg'/></div></a>*/}
-            {/*                    <a href={singleProject.codeLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillGithub className='work__mobile-link-svg'/></div></a>*/}
-
-            {/*                </div>*/}
-            {/*                <h4 className='bold-text'>{singleProject.title}</h4>*/}
-            {/*                <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{singleProject.description}</p>*/}
-
-
-
-
-            {/*                /!*<div className='app__work-tag2 app__flex'>*!/*/}
-            {/*                /!*    <p className='p-text'>{singleProject.tags[0]}</p>*!/*/}
-            {/*                /!*</div>*!/*/}
-
-
-            {/*                /!*<div className='app__work-tag app__flex'>*!/*/}
-            {/*                /!*        <p className='p-text'>Click for More Details</p>*!/*/}
-            {/*                /!*</div>*!/*/}
-
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </motion.div>*/}
-            {/*</div>*/}
 
         </div>
     );

@@ -5,10 +5,14 @@ import ReactMarkdown from 'react-markdown'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import rangeParser from 'parse-numeric-range'
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { materialOceanic } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx'
 import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
 import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown'
 import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
+import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript'
+import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx'
 
 import remarkGfm from 'remark-gfm'
 
@@ -27,11 +31,15 @@ SyntaxHighlighter.registerLanguage('jsx', jsx)
 SyntaxHighlighter.registerLanguage('javascript', javascript)
 SyntaxHighlighter.registerLanguage('markdown', markdown)
 SyntaxHighlighter.registerLanguage('css', css)
+SyntaxHighlighter.registerLanguage('typescript', typescript)
+SyntaxHighlighter.registerLanguage('tsx', tsx)
 
 
 const SingleSkill = () => {
 
-    const syntaxTheme = oneDark;
+    // const syntaxTheme = oneDark;
+    // const syntaxTheme = materialOceanic;
+    const syntaxTheme = nord;
 
     const MarkdownComponents = {
 
@@ -171,7 +179,8 @@ const SingleSkill = () => {
             <h4 className='head-text'  style={{marginTop: '30px', marginRight: '0', fontSize: '2rem'}}>{singleSkill.name}</h4>
 
             <div className='single-product__markdown2' style={{textAlign: 'center', padding: '1.5rem'}}>
-                <Link to='#' onClick={() => navigate(-1)} className='work__all-projects'>
+                <Link to={'/skill/' + singleSkill.skillType } style={{textDecoration: 'none'}}>
+                {/*<Link to='#' onClick={() => navigate(-1)} className='work__all-projects'>*/}
                     <p><AiOutlineArrowLeft/> All Skills</p>
                 </Link>
             </div>

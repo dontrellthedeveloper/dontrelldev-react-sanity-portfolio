@@ -20,7 +20,7 @@ const Skills = () => {
 
     useEffect(() => {
         const query = '*[_type == "experiences"] | order(order asc)';
-        const skillsQuery = '*[_type == "experiences"] | order(order asc)';
+        const skillsQuery = '*[_type == "skills"] | order(order asc)';
         const skillsBackEndQuery = '*[_type == "skillsBackEnd"] | order(order asc)';
         const skillsFrontEndQuery = '*[_type == "skillsFrontEnd"] | order(order asc)';
         const skillsCloudQuery = '*[_type == "skillsCloud"] | order(order asc)';
@@ -68,7 +68,9 @@ const Skills = () => {
             <h2 className='head-text'>Skills</h2>
             <div className='app__skills-container' style={{margin: '3rem auto'}}>
                 <div>
+                    <Link to={'/skill/frontend'} style={{textDecoration: 'none'}}>
                     <h4 className='head-text app__skills-heading'>Front-End Development</h4>
+                    </Link>
                     <motion.div className='app__skills-list'>
                         {skillsFrontEnd?.map((skill) => (
                             <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
@@ -81,7 +83,7 @@ const Skills = () => {
                                     <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
                                         <img src={urlFor(skill.icon)} alt={skill.name}/>
                                     </div>
-                                    <p className='p-text'>{skill.name}</p>
+                                    <p className='p-text skill-name_overflow'>{skill.name}</p>
                                 </motion.div>
                             </Link>
 
@@ -89,56 +91,69 @@ const Skills = () => {
                     </motion.div>
 
 
+                    <Link to={'/skill/backend'} style={{textDecoration: 'none'}}>
 
                     <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Back-End Development</h4>
+                    </Link>
                     <motion.div className='app__skills-list'>
-                        {skillsBackEnd?.map((skill) => (
-                            <motion.div
-                                whileInView={{opacity: [0,1]}}
-                                transition={{duration: 0.5}}
-                                className='app__skills-item app__flex'
-                                key={skill.name}
-                            >
-                                <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
-                                    <img src={urlFor(skill.icon)} alt={skill.name}/>
-                                </div>
-                                <p className='p-text'>{skill.name}</p>
-                            </motion.div>
+                        {skillsBackEnd?.map((skill) => (                                        <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+
+                                <motion.div
+                                    whileInView={{opacity: [0,1]}}
+                                    transition={{duration: 0.5}}
+                                    className='app__skills-item app__flex'
+                                    key={skill.name}
+                                >
+                                    <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
+                                        <img src={urlFor(skill.icon)} alt={skill.name}/>
+                                    </div>
+                                    <p className='p-text skill-name_overflow'>{skill.name}</p>
+                                </motion.div>
+                            </Link>
                         ))}
                     </motion.div>
+
+                    <Link to={'/skill/database'} style={{textDecoration: 'none'}}>
 
                     <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Database Development</h4>
+                    </Link>
                     <motion.div className='app__skills-list'>
                         {skillsDatabase?.map((skill) => (
-                            <motion.div
-                                whileInView={{opacity: [0,1]}}
-                                transition={{duration: 0.5}}
-                                className='app__skills-item app__flex'
-                                key={skill.name}
-                            >
-                                <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
-                                    <img src={urlFor(skill.icon)} alt={skill.name}/>
-                                </div>
-                                <p className='p-text'>{skill.name}</p>
-                            </motion.div>
+                            <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                                <motion.div
+                                    whileInView={{opacity: [0,1]}}
+                                    transition={{duration: 0.5}}
+                                    className='app__skills-item app__flex'
+                                    key={skill.name}
+                                >
+                                    <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
+                                        <img src={urlFor(skill.icon)} alt={skill.name}/>
+                                    </div>
+                                    <p className='p-text skill-name_overflow'>{skill.name}</p>
+                                </motion.div>
+                            </Link>
                         ))}
                     </motion.div>
 
+                    <Link to={'/skill/cloud'} style={{textDecoration: 'none'}}>
 
                     <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Cloud Development</h4>
+                    </Link>
                     <motion.div className='app__skills-list'>
                         {skillsCloud?.map((skill) => (
-                            <motion.div
-                                whileInView={{opacity: [0,1]}}
-                                transition={{duration: 0.5}}
-                                className='app__skills-item app__flex'
-                                key={skill.name}
-                            >
-                                <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
-                                    <img src={urlFor(skill.icon)} alt={skill.name}/>
-                                </div>
-                                <p className='p-text' style={{fontSize: '11px'}}>{skill.name}</p>
-                            </motion.div>
+                            <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                                <motion.div
+                                    whileInView={{opacity: [0,1]}}
+                                    transition={{duration: 0.5}}
+                                    className='app__skills-item app__flex'
+                                    key={skill.name}
+                                >
+                                    <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
+                                        <img src={urlFor(skill.icon)} alt={skill.name}/>
+                                    </div>
+                                    <p className='p-text skill-name_overflow' style={{fontSize: '11px'}}>{skill.name}</p>
+                                </motion.div>
+                            </Link>
                         ))}
                     </motion.div>
 

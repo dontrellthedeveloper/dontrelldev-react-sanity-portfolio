@@ -1,8 +1,10 @@
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");*/
+@import url("https://fonts.googleapis.com/css2?family=arial:wght@400;500;700&display=swap");
 
 :root {
-    --font-base: "DM Sans", sans-serif;
+    /*--font-base: "DM Sans", sans-serif;*/
+    --font-base: "Arial", sans-serif;
 
     --primary-color: #edf2f8;
     --secondary-color: #313bac;
@@ -18,4 +20,5 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    line-height: 1.5rem;
 }

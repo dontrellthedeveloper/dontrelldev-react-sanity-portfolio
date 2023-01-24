@@ -15,6 +15,21 @@ export default{
             type:'string'
         },
         {
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug',
+            options: {
+                source: 'name',
+                maxLength: 96,
+            },
+        },
+        {
+            name:'skillType',
+            title:'Skill Type',
+            type:'string',
+            initialValue: 'frontend'
+        },
+        {
             name:'bgColor',
             title:'BgColor',
             type:'string'
@@ -26,6 +41,11 @@ export default{
             options: {
                 hotspot: true,
             },
+        },
+        {
+            type: "markdown",
+            description: "A Github flavored markdown field with image uploading",
+            name: "bio"
         },
 
     ]
