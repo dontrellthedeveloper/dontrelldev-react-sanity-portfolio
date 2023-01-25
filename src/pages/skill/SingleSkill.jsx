@@ -17,6 +17,11 @@ import liquid from 'react-syntax-highlighter/dist/cjs/languages/prism/liquid';
 import git from 'react-syntax-highlighter/dist/cjs/languages/prism/git';
 import sass from 'react-syntax-highlighter/dist/cjs/languages/prism/sass';
 import pug from 'react-syntax-highlighter/dist/cjs/languages/prism/pug';
+import python from 'react-syntax-highlighter/dist/cjs/languages/prism/python';
+import docker from 'react-syntax-highlighter/dist/cjs/languages/prism/docker';
+import graphql from 'react-syntax-highlighter/dist/cjs/languages/prism/graphql';
+import sql from 'react-syntax-highlighter/dist/cjs/languages/prism/sql';
+import mongodb from 'react-syntax-highlighter/dist/cjs/languages/prism/mongodb';
 
 import remarkGfm from 'remark-gfm'
 
@@ -41,6 +46,11 @@ SyntaxHighlighter.registerLanguage('liquid', liquid)
 SyntaxHighlighter.registerLanguage('git', git)
 SyntaxHighlighter.registerLanguage('sass', sass)
 SyntaxHighlighter.registerLanguage('pug', pug)
+SyntaxHighlighter.registerLanguage('python', python)
+SyntaxHighlighter.registerLanguage('docker', docker)
+SyntaxHighlighter.registerLanguage('graphql', graphql)
+SyntaxHighlighter.registerLanguage('sql', sql)
+SyntaxHighlighter.registerLanguage('mongodb', mongodb)
 
 
 const SingleSkill = () => {
