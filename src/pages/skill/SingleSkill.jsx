@@ -62,27 +62,6 @@ const SingleSkill = () => {
 
     const MarkdownComponents = {
 
-        // const styleMarkdown = css({
-        //     '.codeStyle, pre, code, code span': {
-        //         // Your SyntaxHighlighter override styles here
-        //     },
-        //     code: {
-        //         // Your general code styles here
-        //     },
-        //     'pre code': {
-        //         // Your code-block styles here
-        //     },
-        //     'h3 code': {
-        //         color: 'inherit'
-        //     },
-        //     'span.linenumber': {
-        //         display: 'none !important'
-        //     },
-        //     '[data="highlight"]': {
-        //         // Your custom line highlight styles here
-        //     }
-        // })
-
         // SyntaxHighlight code will go here
         code({ node, inline, className, ...props }) {
 
@@ -137,13 +116,6 @@ const SingleSkill = () => {
 
     useEffect(() => {
         const query = '*[_type == "experiences"] | order(order asc)';
-
-
-        // client.fetch(query)
-        //     .then((data) => {
-        //         setExperience(data)
-        //     })
-
 
 
     },[])

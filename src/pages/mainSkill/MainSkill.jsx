@@ -84,6 +84,10 @@ const MainSkill = () => {
 
 
     if(!mainSkill) return <div>Loading.....</div>
+    if(!skillsFrontEnd) return <div>Loading.....</div>
+    if(!skillsBackEnd) return <div>Loading.....</div>
+    if(!skillsDatabase) return <div>Loading.....</div>
+    if(!skillsCloud) return <div>Loading.....</div>
 
 
 
