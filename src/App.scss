@@ -406,7 +406,7 @@
 .single-skill__markdown {
   background: #fff;
   padding: 2rem;
-  width: 800px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 4rem;
@@ -416,6 +416,10 @@
     //max-width: 650px;
     text-align: left;
     margin: 0 auto;
+  }
+
+  ul {
+    text-align: left;
   }
 
 

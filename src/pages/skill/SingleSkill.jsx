@@ -33,6 +33,7 @@ import {AiFillChrome, AiFillGithub, AiOutlineArrowLeft, AiOutlineLink} from "rea
 import './SingleSkill.scss';
 import {Helmet} from "react-helmet";
 import ReactTooltip from "react-tooltip";
+import {TbListDetails} from "react-icons/tb";
 
 
 
@@ -155,6 +156,7 @@ const SingleSkill = () => {
             _id,
             slug,
             skillType,
+            skillWebsite,
             bgColor,
             bio,
             icon{
@@ -198,7 +200,7 @@ const SingleSkill = () => {
 
             <div className='single-product__markdown2' style={{textAlign: 'center', padding: '1.5rem'}}>
                 <Link to={'/skill/' + singleSkill.skillType } style={{textDecoration: 'none'}}>
-                {/*<Link to='#' onClick={() => navigate(-1)} className='work__all-projects'>*/}
+                    {/*<Link to='#' onClick={() => navigate(-1)} className='work__all-projects'>*/}
                     <p><AiOutlineArrowLeft/> All {singleSkill.skillType.charAt(0).toUpperCase() + singleSkill.skillType.slice(1)} Skills</p>
                 </Link>
             </div>
@@ -220,25 +222,15 @@ const SingleSkill = () => {
                             transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
                             className='app__work-hover app__flex'
                         >
-                            {/*<a href={singleProject.projectLink} target='_blank' rel="noreferrer">*/}
-                            {/*    <motion.div*/}
-                            {/*        whileInView={{scale: [0, 1]}}*/}
-                            {/*        whileHover={{scale: [1,0.9]}}*/}
-                            {/*        transition={{duration: 0.25}}*/}
-                            {/*        className='app__flex'*/}
-                            {/*    >*/}
-                            {/*        /!*<AiFillEye/>*!/*/}
-                            {/*        <AiFillChrome/>*/}
-                            {/*    </motion.div>*/}
-                            {/*</a>*/}
-                            <a href='https://github.com/dontrellthedeveloper' target='_blank' rel="noreferrer">
+                            <a href={singleSkill.skillWebsite} target='_blank' rel="noreferrer">
                                 <motion.div
                                     whileInView={{scale: [0, 1]}}
                                     whileHover={{scale: [1,0.9]}}
                                     transition={{duration: 0.25}}
                                     className='app__flex'
                                 >
-                                    <AiFillGithub/>
+                                    {/*<AiFillGithub/>*/}
+                                    <TbListDetails/>
                                 </motion.div>
                             </a>
                         </motion.div>

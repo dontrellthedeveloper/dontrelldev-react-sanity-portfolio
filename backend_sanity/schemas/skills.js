@@ -23,6 +23,11 @@ export default{
             type: 'string',
         },
         {
+            name:'skillWebsite',
+            title:'Skill Website',
+            type:'string'
+        },
+        {
             name: 'imgUrl',
             title: 'ImageUrl',
             type: 'image',

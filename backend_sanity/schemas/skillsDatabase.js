@@ -27,7 +27,12 @@ export default{
             name:'skillType',
             title:'Skill Type',
             type:'string',
-            initialValue: 'frontend'
+            initialValue: 'database'
+        },
+        {
+            name:'skillWebsite',
+            title:'Skill Website',
+            type:'string'
         },
         {
             name:'bgColor',

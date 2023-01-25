@@ -30,6 +30,11 @@ export default{
             initialValue: 'frontend'
         },
         {
+            name:'skillWebsite',
+            title:'Skill Website',
+            type:'string'
+        },
+        {
             name:'bgColor',
             title:'BgColor',
             type:'string'

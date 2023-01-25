@@ -166,7 +166,7 @@ const Skills = () => {
                             <motion.div
                                 whileInView={{opacity: [0,1]}}
                                 transition={{duration: 0.5}}
-                                className='app__skills-item app__flex'
+                                className='app__cert-item app__flex'
                                 key={certification.title}
                             >
                                 <a href={certification.verifyLink} target='_blank' rel="noreferrer">
