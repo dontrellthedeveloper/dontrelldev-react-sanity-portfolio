@@ -200,7 +200,7 @@ const MainSkill = () => {
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Front-End Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
                                     {skillsFrontEnd?.map((skill) => (
-                                        <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                                        <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
                                             <motion.div
                                                 whileInView={{opacity: [0,1]}}
                                                 transition={{duration: 0.5}}
@@ -225,8 +225,9 @@ const MainSkill = () => {
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Back-End Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
                                     {skillsBackEnd?.map((skill) => (
-                                        <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
-                                            <motion.div
+                                        <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
+
+                                        <motion.div
                                                 whileInView={{opacity: [0,1]}}
                                                 transition={{duration: 0.5}}
                                                 className='app__skills-item app__flex'
@@ -250,8 +251,9 @@ const MainSkill = () => {
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Database Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
                                     {skillsDatabase?.map((skill) => (
-                                        <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
-                                            <motion.div
+                                        <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
+
+                                        <motion.div
                                                 whileInView={{opacity: [0,1]}}
                                                 transition={{duration: 0.5}}
                                                 className='app__skills-item app__flex'
@@ -275,8 +277,9 @@ const MainSkill = () => {
                                 <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Cloud Skills</h4>
                                 <motion.div className='app__skills-list' style={{marginRight: '0'}}>
                                     {skillsCloud?.map((skill) => (
-                                        <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
-                                            <motion.div
+                                        <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
+
+                                        <motion.div
                                                 whileInView={{opacity: [0,1]}}
                                                 transition={{duration: 0.5}}
                                                 className='app__skills-item app__flex'

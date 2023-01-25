@@ -73,7 +73,7 @@ const Skills = () => {
                     </Link>
                     <motion.div className='app__skills-list'>
                         {skillsFrontEnd?.map((skill) => (
-                            <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                            <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
                                 <motion.div
                                     whileInView={{opacity: [0,1]}}
                                     transition={{duration: 0.5}}
@@ -96,7 +96,7 @@ const Skills = () => {
                     <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Back-End Development</h4>
                     </Link>
                     <motion.div className='app__skills-list'>
-                        {skillsBackEnd?.map((skill) => (                                        <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                        {skillsBackEnd?.map((skill) => (                                          <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
 
                                 <motion.div
                                     whileInView={{opacity: [0,1]}}
@@ -119,7 +119,7 @@ const Skills = () => {
                     </Link>
                     <motion.div className='app__skills-list'>
                         {skillsDatabase?.map((skill) => (
-                            <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                            <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
                                 <motion.div
                                     whileInView={{opacity: [0,1]}}
                                     transition={{duration: 0.5}}
@@ -141,7 +141,7 @@ const Skills = () => {
                     </Link>
                     <motion.div className='app__skills-list'>
                         {skillsCloud?.map((skill) => (
-                            <Link to={'/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                            <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
                                 <motion.div
                                     whileInView={{opacity: [0,1]}}
                                     transition={{duration: 0.5}}

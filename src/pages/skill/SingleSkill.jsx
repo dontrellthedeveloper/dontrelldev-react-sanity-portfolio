@@ -171,7 +171,7 @@ const SingleSkill = () => {
             <h4 className='head-text'  style={{marginTop: '30px', marginRight: '0', fontSize: '2rem'}}>{singleSkill.name}</h4>
 
             <div className='single-product__markdown2' style={{textAlign: 'center', padding: '1.5rem'}}>
-                <Link to={'/skill/' + singleSkill.skillType } style={{textDecoration: 'none'}}>
+                <Link to={'/dev/' + singleSkill.skillType } style={{textDecoration: 'none'}}>
                     {/*<Link to='#' onClick={() => navigate(-1)} className='work__all-projects'>*/}
                     <p><AiOutlineArrowLeft/> All {singleSkill.skillType.charAt(0).toUpperCase() + singleSkill.skillType.slice(1)} Skills</p>
                 </Link>
