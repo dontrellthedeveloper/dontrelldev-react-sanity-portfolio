@@ -63,25 +63,17 @@ const Skills = () => {
             })
     },[])
 
-    if(!certifications) return <div>Loading.....</div>
-    if(!experience) return <div>Loading.....</div>
-    if(!skillsFrontEnd) return <div>Loading.....</div>
-    if(!skillsBackEnd) return <div>Loading.....</div>
-    if(!skillsDatabase) return <div>Loading.....</div>
-    if(!skillsCloud) return <div>Loading.....</div>
-
-
     return (
         <div style={{maxWidth: '1400px'}}>
             <h2 className='head-text'>Skills</h2>
             <div className='app__skills-container' style={{margin: '3rem auto'}}>
                 <div>
-                    <Link to='/dev/frontend' style={{textDecoration: 'none'}}>
+                    <Link to={'/skill/frontend'} style={{textDecoration: 'none'}}>
                     <h4 className='head-text app__skills-heading'>Front-End Development</h4>
                     </Link>
                     <motion.div className='app__skills-list'>
                         {skillsFrontEnd?.map((skill) => (
-                            <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                            <Link to={'/skill/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
                                 <motion.div
                                     whileInView={{opacity: [0,1]}}
                                     transition={{duration: 0.5}}
@@ -99,12 +91,12 @@ const Skills = () => {
                     </motion.div>
 
 
-                    <Link to='/dev/backend' style={{textDecoration: 'none'}}>
+                    <Link to={'/skill/backend'} style={{textDecoration: 'none'}}>
 
                     <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Back-End Development</h4>
                     </Link>
                     <motion.div className='app__skills-list'>
-                        {skillsBackEnd?.map((skill) => (                                          <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                        {skillsBackEnd?.map((skill) => (                                        <Link to={'/skill/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
 
                                 <motion.div
                                     whileInView={{opacity: [0,1]}}
@@ -121,13 +113,13 @@ const Skills = () => {
                         ))}
                     </motion.div>
 
-                    <Link to='/dev/database' style={{textDecoration: 'none'}}>
+                    <Link to={'/skill/database'} style={{textDecoration: 'none'}}>
 
                     <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Database Development</h4>
                     </Link>
                     <motion.div className='app__skills-list'>
                         {skillsDatabase?.map((skill) => (
-                            <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                            <Link to={'/skill/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
                                 <motion.div
                                     whileInView={{opacity: [0,1]}}
                                     transition={{duration: 0.5}}
@@ -143,13 +135,13 @@ const Skills = () => {
                         ))}
                     </motion.div>
 
-                    <Link to='/dev/cloud' style={{textDecoration: 'none'}}>
+                    <Link to={'/skill/cloud'} style={{textDecoration: 'none'}}>
 
                     <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Cloud Development</h4>
                     </Link>
                     <motion.div className='app__skills-list'>
                         {skillsCloud?.map((skill) => (
-                            <Link to={'/skill/' + skill.slug.current} style={{textDecoration: 'none'}}>
+                            <Link to={'/skill/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
                                 <motion.div
                                     whileInView={{opacity: [0,1]}}
                                     transition={{duration: 0.5}}

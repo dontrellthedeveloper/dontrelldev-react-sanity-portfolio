@@ -62,6 +62,27 @@ const SingleSkill = () => {
 
     const MarkdownComponents = {
 
+        // const styleMarkdown = css({
+        //     '.codeStyle, pre, code, code span': {
+        //         // Your SyntaxHighlighter override styles here
+        //     },
+        //     code: {
+        //         // Your general code styles here
+        //     },
+        //     'pre code': {
+        //         // Your code-block styles here
+        //     },
+        //     'h3 code': {
+        //         color: 'inherit'
+        //     },
+        //     'span.linenumber': {
+        //         display: 'none !important'
+        //     },
+        //     '[data="highlight"]': {
+        //         // Your custom line highlight styles here
+        //     }
+        // })
+
         // SyntaxHighlight code will go here
         code({ node, inline, className, ...props }) {
 
@@ -114,6 +135,20 @@ const SingleSkill = () => {
 
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const query = '*[_type == "experiences"] | order(order asc)';
+
+
+        // client.fetch(query)
+        //     .then((data) => {
+        //         setExperience(data)
+        //     })
+
+
+
+    },[])
+
+
 
     useEffect(() => {
         client.fetch(`*[slug.current == "${slug}"]{
@@ -164,7 +199,7 @@ const SingleSkill = () => {
             <h4 className='head-text'  style={{marginTop: '30px', marginRight: '0', fontSize: '2rem'}}>{singleSkill.name}</h4>
 
             <div className='single-product__markdown2' style={{textAlign: 'center', padding: '1.5rem'}}>
-                <Link to={'/dev/' + singleSkill.skillType } style={{textDecoration: 'none'}}>
+                <Link to={'/skill/' + singleSkill.skillType } style={{textDecoration: 'none'}}>
                     {/*<Link to='#' onClick={() => navigate(-1)} className='work__all-projects'>*/}
                     <p><AiOutlineArrowLeft/> All {singleSkill.skillType.charAt(0).toUpperCase() + singleSkill.skillType.slice(1)} Skills</p>
                 </Link>

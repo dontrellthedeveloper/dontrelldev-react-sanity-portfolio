@@ -130,7 +130,7 @@ const VideoHeader = () => {
 
                                             {/*<a href='https://github.com/dontrellthedeveloper' target='_blank' rel="noreferrer">*/}
 
-                                                <Link to={'/dev/' + skill.slug.current}>
+                                                <Link to={'/skill/' + skill.slug.current}>
 
                                                 <motion.div
                                                     whileInView={{scale: [0, 1]}}
