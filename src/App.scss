@@ -487,6 +487,11 @@ code {
   & > span {
     display: block;
   }
+
+
+  ::selection {
+    background: #706c6c;
+  }
 }
 
 
