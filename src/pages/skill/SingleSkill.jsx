@@ -114,13 +114,6 @@ const SingleSkill = () => {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const query = '*[_type == "experiences"] | order(order asc)';
-
-
-    },[])
-
-
 
     useEffect(() => {
         client.fetch(`*[slug.current == "${slug}"]{

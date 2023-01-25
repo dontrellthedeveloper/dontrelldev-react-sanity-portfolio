@@ -28,7 +28,6 @@ const MainSkill = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const query = '*[_type == "experiences"] | order(order asc)';
         const skillsBackEndQuery = '*[_type == "skillsBackEnd"] | order(order asc)';
         const skillsFrontEndQuery = '*[_type == "skillsFrontEnd"] | order(order asc)';
         const skillsCloudQuery = '*[_type == "skillsCloud"] | order(order asc)';
@@ -163,20 +162,10 @@ const MainSkill = () => {
 
 
                     <div className='app__work-content app__flex' style={{display: "none"}}>
-                        {/*<div className='app__flex'>*/}
-                        {/*    <a href={singleProject.projectLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiOutlineLink className='work__mobile-link-svg'/></div></a>*/}
-                        {/*    <a href={singleProject.codeLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillGithub className='work__mobile-link-svg'/></div></a>*/}
 
-                        {/*</div>*/}
                         <h4 className='bold-text'>{mainSkill.name}</h4>
                         <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{mainSkill.description}</p>
 
-
-
-
-                        {/*<div className='app__work-tag2 app__flex'>*/}
-                        {/*    <p className='p-text'>{singleProject.tags[0]}</p>*/}
-                        {/*</div>*/}
 
 
                         <div className='app__work-tag app__flex'>
