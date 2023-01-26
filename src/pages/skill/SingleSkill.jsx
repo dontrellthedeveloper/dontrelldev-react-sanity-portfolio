@@ -22,13 +22,14 @@ import docker from 'react-syntax-highlighter/dist/cjs/languages/prism/docker';
 import graphql from 'react-syntax-highlighter/dist/cjs/languages/prism/graphql';
 import sql from 'react-syntax-highlighter/dist/cjs/languages/prism/sql';
 import mongodb from 'react-syntax-highlighter/dist/cjs/languages/prism/mongodb';
+import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json';
 
 import remarkGfm from 'remark-gfm'
 
 import {client, urlFor} from "../../client";
 import {Link, useParams, useNavigate} from "react-router-dom";
 import {motion} from "framer-motion";
-import {AiFillChrome, AiFillGithub, AiOutlineArrowLeft, AiOutlineLink} from "react-icons/ai";
+import {AiFillChrome, AiFillGithub, AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineLink} from "react-icons/ai";
 
 import './SingleSkill.scss';
 import {Helmet} from "react-helmet";
@@ -52,6 +53,7 @@ SyntaxHighlighter.registerLanguage('docker', docker)
 SyntaxHighlighter.registerLanguage('graphql', graphql)
 SyntaxHighlighter.registerLanguage('sql', sql)
 SyntaxHighlighter.registerLanguage('mongodb', mongodb)
+SyntaxHighlighter.registerLanguage('json', json)
 
 
 const SingleSkill = () => {
@@ -199,10 +201,16 @@ const SingleSkill = () => {
             <h4 className='head-text'  style={{marginTop: '30px', marginRight: '0', fontSize: '2rem'}}>{singleSkill.name}</h4>
 
             <div className='single-product__markdown2' style={{textAlign: 'center', padding: '1.5rem'}}>
-                <Link to={'/skill/' + singleSkill.skillType } style={{textDecoration: 'none'}}>
-                    {/*<Link to='#' onClick={() => navigate(-1)} className='work__all-projects'>*/}
-                    <p><AiOutlineArrowLeft/> All {singleSkill.skillType.charAt(0).toUpperCase() + singleSkill.skillType.slice(1)} Skills</p>
-                </Link>
+                <div className='row app__flex'>
+                    <Link to='#'  onClick={() => navigate(-1)} className='work__all-projects' style={{textDecoration: 'none', marginRight: '10px'}}>
+                        <p><AiOutlineArrowLeft/> Back</p>
+                    </Link>
+                    <p> | </p>
+                    <Link to={'/skill/' + singleSkill.skillType } style={{marginLeft: '10px'}}  className='work__all-projects'>
+                        <p> All {singleSkill.skillType.charAt(0).toUpperCase() + singleSkill.skillType.slice(1)} Skills <AiOutlineArrowRight/></p>
+                    </Link>
+                </div>
+
             </div>
 
 

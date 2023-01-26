@@ -7,7 +7,7 @@ import remarkGfm from 'remark-gfm'
 import {client, urlFor} from "../../client";
 import {Link, useParams, useNavigate} from "react-router-dom";
 import {motion} from "framer-motion";
-import {AiFillChrome, AiFillGithub, AiOutlineArrowLeft, AiOutlineLink} from "react-icons/ai";
+import {AiFillChrome, AiFillGithub, AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineLink} from "react-icons/ai";
 
 import './SingleProject.scss';
 import {Helmet} from "react-helmet";
@@ -16,6 +16,8 @@ const SingleProject = () => {
     const [singleProject, setSingleProject] = useState(null);
     const [animateCard, setAnimateCard] = useState({y: 0, opacity: 1});
     const {slug} = useParams();
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         client.fetch(`*[slug.current == "${slug}"]{
@@ -80,9 +82,21 @@ const SingleProject = () => {
             </Helmet>
             <div className='single-product__markdown2' style={{textAlign: 'center'}}>
                 <ReactMarkdown children={singleProject.bio2} remarkPlugins={[remarkGfm]} />
-                <Link to='/portfolio' className='work__all-projects'>
-                    <p style={{marginBottom: '20px'}}><AiOutlineArrowLeft/> All Projects</p>
-                </Link>
+                {/*<Link to='/portfolio' className='work__all-projects'>*/}
+                {/*    <p style={{marginBottom: '20px'}}><AiOutlineArrowLeft/> All Projects</p>*/}
+                {/*</Link>*/}
+
+
+                <div className='row app__flex' style={{marginBottom: '20px'}}>
+                    <Link to='#'  onClick={() => navigate(-1)} className='work__all-projects' style={{textDecoration: 'none', marginRight: '10px'}}>
+                        <p ><AiOutlineArrowLeft/> Back</p>
+                    </Link>
+                    <p> | </p>
+
+                    <Link to='/portfolio' style={{marginLeft: '10px'}} className='work__all-projects'>
+                        <p> All Projects <AiOutlineArrowRight/></p>
+                    </Link>
+                </div>
             </div>
 
 
