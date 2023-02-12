@@ -39,6 +39,21 @@ export default {
             type: 'string',
         },
         {
+            name: 'workType',
+            title: 'Work Type',
+            type: 'string'
+        },
+        {
+            name: 'workType2',
+            title: 'Work Type 2',
+            type: 'string'
+        },
+        {
+            name: 'workType3',
+            title: 'Work Type 3',
+            type: 'string'
+        },
+        {
             name: 'imgUrl',
             title: 'ImageUrl',
             type: 'image',

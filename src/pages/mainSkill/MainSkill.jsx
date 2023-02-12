@@ -13,6 +13,7 @@ import './MainSkill.scss';
 import {Helmet} from "react-helmet";
 import ReactTooltip from "react-tooltip";
 import {TbListDetails} from "react-icons/tb";
+import {Work} from "../../container";
 
 const MainSkill = () => {
     const [mainSkill, setMainSkill] = useState(null);
@@ -22,23 +23,21 @@ const MainSkill = () => {
     const [skillsFrontEnd, setSkillsFrontEnd] = useState([]);
     const [skillsCloud, setSkillsCloud] = useState([]);
     const [skillsDatabase, setSkillsDatabase] = useState([]);
+    const [worksFrontEnd, setWorksFrontEnd] = useState([]);
+    const [worksBackEnd, setWorksBackEnd] = useState([]);
+    const [worksDatabase, setWorksDatabase] = useState([]);
+    const [worksCloud, setWorksCloud] = useState([]);
+
 
     const {slug} = useParams();
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        const query = '*[_type == "experiences"] | order(order asc)';
         const skillsBackEndQuery = '*[_type == "skillsBackEnd"] | order(order asc)';
         const skillsFrontEndQuery = '*[_type == "skillsFrontEnd"] | order(order asc)';
         const skillsCloudQuery = '*[_type == "skillsCloud"] | order(order asc)';
         const skillsDatabaseQuery = '*[_type == "skillsDatabase"] | order(order asc)';
-
-        // client.fetch(query)
-        //     .then((data) => {
-        //         setExperience(data)
-        //     })
-
 
         client.fetch(skillsFrontEndQuery)
             .then((data) => {
@@ -83,11 +82,44 @@ const MainSkill = () => {
     }, [slug]);
 
 
+    useEffect(() => {
+        const frontEndQuery = '*[_type == "works" && workType == "frontend"] | order(order asc)';
+        const backEndQuery = '*[_type == "works" && workType == "backend"] | order(order asc)';
+        const databaseQuery = '*[_type == "works" && workType == "database" || workType2 == "database" || workType3 == "database"] | order(order asc)';
+        const cloudQuery = '*[_type == "works" && workType == "cloud"|| workType2 == "cloud" || workType3 == "cloud"] | order(order asc)';
+
+        client.fetch(frontEndQuery)
+            .then((data) => {
+                setWorksFrontEnd(data)
+            })
+
+        client.fetch(backEndQuery)
+            .then((data) => {
+                setWorksBackEnd(data)
+            })
+
+        client.fetch(databaseQuery)
+            .then((data) => {
+                setWorksDatabase(data)
+            })
+
+        client.fetch(cloudQuery)
+            .then((data) => {
+                setWorksCloud(data)
+            })
+    },[])
+
+
+
     if(!mainSkill) return <div>Loading.....</div>
     if(!skillsFrontEnd) return <div>Loading.....</div>
     if(!skillsBackEnd) return <div>Loading.....</div>
     if(!skillsDatabase) return <div>Loading.....</div>
     if(!skillsCloud) return <div>Loading.....</div>
+    if(!worksFrontEnd) return <div>Loading.....</div>
+    if(!worksBackEnd) return <div>Loading.....</div>
+    if(!worksCloud) return <div>Loading.....</div>
+    if(!worksDatabase) return <div>Loading.....</div>
 
 
 
@@ -145,17 +177,6 @@ const MainSkill = () => {
                                 transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
                                 className='app__work-hover app__flex'
                             >
-                                {/*<a href={singleProject.projectLink} target='_blank' rel="noreferrer">*/}
-                                {/*    <motion.div*/}
-                                {/*        whileInView={{scale: [0, 1]}}*/}
-                                {/*        whileHover={{scale: [1,0.9]}}*/}
-                                {/*        transition={{duration: 0.25}}*/}
-                                {/*        className='app__flex'*/}
-                                {/*    >*/}
-                                {/*        /!*<AiFillEye/>*!/*/}
-                                {/*        <AiFillChrome/>*/}
-                                {/*    </motion.div>*/}
-                                {/*</a>*/}
                                 <a href={mainSkill.skillWebsite} target='_blank' rel="noreferrer">
                                     <motion.div
                                         whileInView={{scale: [0, 1]}}
@@ -172,20 +193,11 @@ const MainSkill = () => {
 
 
                     <div className='app__work-content app__flex' style={{display: "none"}}>
-                        {/*<div className='app__flex'>*/}
-                        {/*    <a href={singleProject.projectLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiOutlineLink className='work__mobile-link-svg'/></div></a>*/}
-                        {/*    <a href={singleProject.codeLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillGithub className='work__mobile-link-svg'/></div></a>*/}
 
-                        {/*</div>*/}
                         <h4 className='bold-text'>{mainSkill.name}</h4>
                         <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{mainSkill.description}</p>
 
 
-
-
-                        {/*<div className='app__work-tag2 app__flex'>*/}
-                        {/*    <p className='p-text'>{singleProject.tags[0]}</p>*/}
-                        {/*</div>*/}
 
 
                         <div className='app__work-tag app__flex'>
@@ -224,9 +236,20 @@ const MainSkill = () => {
                                         </Link>
                                     ))}
                                 </motion.div>
+
+
+
+
                             </>
 
+
+
                         )}
+
+
+
+
+
 
 
                         {mainSkill.slug.current === 'backend' && (
@@ -303,12 +326,341 @@ const MainSkill = () => {
 
                         )}
                     </div>
-
-
-
                 </div>
             </div>
 
+
+
+            {mainSkill.slug.current === 'frontend' && (
+            <div style={{maxWidth: '1200px'}}>
+
+                <div className='app__work-filter'>
+                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Front-End Projects</h4>
+                </div>
+
+            <motion.div
+                animate={animateCard}
+                transition={{duration: 0.5, delayChildren: 0.5}}
+                className='app__work-portfolio'
+            >
+                {worksFrontEnd.map((work, index) => (
+
+                    <div className='app__work-item app__flex' key={index} >
+
+                        <Link to={'/' + work.slug.current}>
+                            <div className='app__work-img app__flex'>
+
+                                <img src={urlFor(work.imgUrl)} alt={work.name} />
+
+                                <motion.div
+                                    whileHover={{opacity: [0,1]}}
+                                    transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
+                                    className='app__work-hover app__flex'
+                                >
+                                    {work.codeLink && (
+                                        <a href={work.codeLink} target='_blank' rel="noreferrer">
+                                            <motion.div
+                                                whileInView={{scale: [0, 1]}}
+                                                whileHover={{scale: [1,0.9]}}
+                                                transition={{duration: 0.25}}
+                                                className='app__flex'
+                                            >
+                                                <TbListDetails/>
+                                            </motion.div>
+                                        </a>
+                                    )}
+                                </motion.div>
+                            </div>
+
+                        </Link>
+
+
+                        <div className='app__work-content app__flex'>
+
+
+                            <Link to={'/' + work.slug.current} style={{textDecoration: 'none'}}>
+                                <h4 className='bold-text'>{work.title}</h4>
+                            </Link>
+
+                            <Link to={'/' + work.slug.current} style={{textDecoration: 'none'}}>
+                                <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{work.description}
+                                </p>
+                            </Link>
+
+                            <div className='app__flex'>
+                                <a href={work.projectLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillChrome className='work__mobile-link-svg'/></div></a>
+                                <a href={work.codeLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillGithub className='work__mobile-link-svg'/></div></a>
+                            </div>
+
+                            <div className='app__work-tag2 app__flex'>
+                                <Link to={'/' + work.slug.current} style={{textDecoration: 'none', fontWeight: '900'}} >
+                                    <p className='p-text'>{work.tags[0]}</p>
+                                </Link>
+                            </div>
+
+
+                            <div className='app__work-tag app__flex'>
+                                <Link to={'/' + work.slug.current} style={{textDecoration: 'none', fontWeight: '900'}}>
+                                    <p className='p-text'>Click for Details</p>
+                                </Link>
+                            </div>
+
+                        </div>
+                    </div>
+
+                ))}
+            </motion.div>
+            </div>
+            )}
+
+
+            {mainSkill.slug.current === 'backend' && (
+                <div style={{maxWidth: '1200px'}}>
+
+                    <div className='app__work-filter'>
+                        <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Full-Stack Projects</h4>
+                    </div>
+
+                    <motion.div
+                        animate={animateCard}
+                        transition={{duration: 0.5, delayChildren: 0.5}}
+                        className='app__work-portfolio'
+                    >
+                        {worksBackEnd.map((work, index) => (
+
+                            <div className='app__work-item app__flex' key={index} >
+
+                                <Link to={'/' + work.slug.current}>
+                                    <div className='app__work-img app__flex'>
+
+                                        <img src={urlFor(work.imgUrl)} alt={work.name} />
+
+                                        <motion.div
+                                            whileHover={{opacity: [0,1]}}
+                                            transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
+                                            className='app__work-hover app__flex'
+                                        >
+                                            {work.codeLink && (
+                                                <a href={work.codeLink} target='_blank' rel="noreferrer">
+                                                    <motion.div
+                                                        whileInView={{scale: [0, 1]}}
+                                                        whileHover={{scale: [1,0.9]}}
+                                                        transition={{duration: 0.25}}
+                                                        className='app__flex'
+                                                    >
+                                                        <TbListDetails/>
+                                                    </motion.div>
+                                                </a>
+                                            )}
+                                        </motion.div>
+                                    </div>
+
+                                </Link>
+
+
+                                <div className='app__work-content app__flex'>
+
+
+                                    <Link to={'/' + work.slug.current} style={{textDecoration: 'none'}}>
+                                        <h4 className='bold-text'>{work.title}</h4>
+                                    </Link>
+
+                                    <Link to={'/' + work.slug.current} style={{textDecoration: 'none'}}>
+                                        <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{work.description}
+                                        </p>
+                                    </Link>
+
+                                    <div className='app__flex'>
+                                        <a href={work.projectLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillChrome className='work__mobile-link-svg'/></div></a>
+                                        <a href={work.codeLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillGithub className='work__mobile-link-svg'/></div></a>
+                                    </div>
+
+                                    <div className='app__work-tag2 app__flex'>
+                                        <Link to={'/' + work.slug.current} style={{textDecoration: 'none', fontWeight: '900'}} >
+                                            <p className='p-text'>{work.tags[0]}</p>
+                                        </Link>
+                                    </div>
+
+
+                                    <div className='app__work-tag app__flex'>
+                                        <Link to={'/' + work.slug.current} style={{textDecoration: 'none', fontWeight: '900'}}>
+                                            <p className='p-text'>Click for Details</p>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        ))}
+                    </motion.div>
+                </div>
+            )}
+
+
+            {mainSkill.slug.current === 'database' && (
+                <div style={{maxWidth: '1200px'}}>
+
+                    <div className='app__work-filter'>
+                        <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Database/Headless CMS Projects</h4>
+                    </div>
+
+                    <motion.div
+                        animate={animateCard}
+                        transition={{duration: 0.5, delayChildren: 0.5}}
+                        className='app__work-portfolio'
+                    >
+                        {worksDatabase.map((work, index) => (
+
+                            <div className='app__work-item app__flex' key={index} >
+
+                                <Link to={'/' + work.slug.current}>
+                                    <div className='app__work-img app__flex'>
+
+                                        <img src={urlFor(work.imgUrl)} alt={work.name} />
+
+                                        <motion.div
+                                            whileHover={{opacity: [0,1]}}
+                                            transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
+                                            className='app__work-hover app__flex'
+                                        >
+                                            {work.codeLink && (
+                                                <a href={work.codeLink} target='_blank' rel="noreferrer">
+                                                    <motion.div
+                                                        whileInView={{scale: [0, 1]}}
+                                                        whileHover={{scale: [1,0.9]}}
+                                                        transition={{duration: 0.25}}
+                                                        className='app__flex'
+                                                    >
+                                                        <TbListDetails/>
+                                                    </motion.div>
+                                                </a>
+                                            )}
+                                        </motion.div>
+                                    </div>
+
+                                </Link>
+
+
+                                <div className='app__work-content app__flex'>
+
+
+                                    <Link to={'/' + work.slug.current} style={{textDecoration: 'none'}}>
+                                        <h4 className='bold-text'>{work.title}</h4>
+                                    </Link>
+
+                                    <Link to={'/' + work.slug.current} style={{textDecoration: 'none'}}>
+                                        <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{work.description}
+                                        </p>
+                                    </Link>
+
+                                    <div className='app__flex'>
+                                        <a href={work.projectLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillChrome className='work__mobile-link-svg'/></div></a>
+                                        <a href={work.codeLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillGithub className='work__mobile-link-svg'/></div></a>
+                                    </div>
+
+                                    <div className='app__work-tag2 app__flex'>
+                                        <Link to={'/' + work.slug.current} style={{textDecoration: 'none', fontWeight: '900'}} >
+                                            <p className='p-text'>{work.tags[0]}</p>
+                                        </Link>
+                                    </div>
+
+
+                                    <div className='app__work-tag app__flex'>
+                                        <Link to={'/' + work.slug.current} style={{textDecoration: 'none', fontWeight: '900'}}>
+                                            <p className='p-text'>Click for Details</p>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        ))}
+                    </motion.div>
+                </div>
+            )}
+
+
+            {mainSkill.slug.current === 'cloud' && (
+                <div style={{maxWidth: '1200px'}}>
+
+                    <div className='app__work-filter'>
+                        <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>AWS Projects</h4>
+                    </div>
+
+                    <motion.div
+                        animate={animateCard}
+                        transition={{duration: 0.5, delayChildren: 0.5}}
+                        className='app__work-portfolio'
+                    >
+                        {worksCloud.map((work, index) => (
+
+                            <div className='app__work-item app__flex' key={index} >
+
+                                <Link to={'/' + work.slug.current}>
+                                    <div className='app__work-img app__flex'>
+
+                                        <img src={urlFor(work.imgUrl)} alt={work.name} />
+
+                                        <motion.div
+                                            whileHover={{opacity: [0,1]}}
+                                            transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
+                                            className='app__work-hover app__flex'
+                                        >
+                                            {work.codeLink && (
+                                                <a href={work.codeLink} target='_blank' rel="noreferrer">
+                                                    <motion.div
+                                                        whileInView={{scale: [0, 1]}}
+                                                        whileHover={{scale: [1,0.9]}}
+                                                        transition={{duration: 0.25}}
+                                                        className='app__flex'
+                                                    >
+                                                        <TbListDetails/>
+                                                    </motion.div>
+                                                </a>
+                                            )}
+                                        </motion.div>
+                                    </div>
+
+                                </Link>
+
+
+                                <div className='app__work-content app__flex'>
+
+
+                                    <Link to={'/' + work.slug.current} style={{textDecoration: 'none'}}>
+                                        <h4 className='bold-text'>{work.title}</h4>
+                                    </Link>
+
+                                    <Link to={'/' + work.slug.current} style={{textDecoration: 'none'}}>
+                                        <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{work.description}
+                                        </p>
+                                    </Link>
+
+                                    <div className='app__flex'>
+                                        <a href={work.projectLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillChrome className='work__mobile-link-svg'/></div></a>
+                                        <a href={work.codeLink} target='_blank' rel="noreferrer"><div className='app__flex work__mobile-links'><AiFillGithub className='work__mobile-link-svg'/></div></a>
+                                    </div>
+
+                                    <div className='app__work-tag2 app__flex'>
+                                        <Link to={'/' + work.slug.current} style={{textDecoration: 'none', fontWeight: '900'}} >
+                                            <p className='p-text'>{work.tags[0]}</p>
+                                        </Link>
+                                    </div>
+
+
+                                    <div className='app__work-tag app__flex'>
+                                        <Link to={'/' + work.slug.current} style={{textDecoration: 'none', fontWeight: '900'}}>
+                                            <p className='p-text'>Click for Details</p>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        ))}
+                    </motion.div>
+                </div>
+            )}
         </div>
     );
 };
