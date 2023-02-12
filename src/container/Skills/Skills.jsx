@@ -69,7 +69,7 @@ const Skills = () => {
             <div className='app__skills-container' style={{margin: '3rem auto'}}>
                 <div>
                     <Link to={'/skill/frontend'} style={{textDecoration: 'none'}}>
-                    <h4 className='head-text app__skills-heading'>Front-End Development</h4>
+                    <h4 className='head-text app__skills-heading app__skills-heading-2'>Front-End Development</h4>
                     </Link>
                     <motion.div className='app__skills-list'>
                         {skillsFrontEnd?.map((skill) => (
@@ -93,7 +93,7 @@ const Skills = () => {
 
                     <Link to={'/skill/backend'} style={{textDecoration: 'none'}}>
 
-                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Back-End Development</h4>
+                    <h4 className='head-text app__skills-heading app__skills-heading-2'  style={{marginTop: '30px'}}>Back-End Development</h4>
                     </Link>
                     <motion.div className='app__skills-list'>
                         {skillsBackEnd?.map((skill) => (                                        <Link to={'/skill/' + skill.skillType + '/' + skill.slug.current} style={{textDecoration: 'none'}}>
@@ -115,7 +115,7 @@ const Skills = () => {
 
                     <Link to={'/skill/database'} style={{textDecoration: 'none'}}>
 
-                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Database Development</h4>
+                    <h4 className='head-text app__skills-heading app__skills-heading-2'  style={{marginTop: '30px'}}>Database Development</h4>
                     </Link>
                     <motion.div className='app__skills-list'>
                         {skillsDatabase?.map((skill) => (
@@ -137,7 +137,7 @@ const Skills = () => {
 
                     <Link to={'/skill/cloud'} style={{textDecoration: 'none'}}>
 
-                    <h4 className='head-text app__skills-heading'  style={{marginTop: '30px'}}>Cloud Development</h4>
+                    <h4 className='head-text app__skills-heading app__skills-heading-2'  style={{marginTop: '30px'}}>Cloud Development</h4>
                     </Link>
                     <motion.div className='app__skills-list'>
                         {skillsCloud?.map((skill) => (

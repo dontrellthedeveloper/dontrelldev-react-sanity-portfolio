@@ -7,8 +7,9 @@ const Homepage = () => {
     return (
         <>
             <VideoHeader/>
-            <Work/>
+
             <Skills/>
+            <Work/>
 
 
             {/*<Testimonial/>*/}

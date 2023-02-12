@@ -27,6 +27,7 @@ const MainSkill = () => {
     const [worksBackEnd, setWorksBackEnd] = useState([]);
     const [worksDatabase, setWorksDatabase] = useState([]);
     const [worksCloud, setWorksCloud] = useState([]);
+    const [certifications, setCertifications] = useState([]);
 
 
     const {slug} = useParams();
@@ -38,6 +39,8 @@ const MainSkill = () => {
         const skillsFrontEndQuery = '*[_type == "skillsFrontEnd"] | order(order asc)';
         const skillsCloudQuery = '*[_type == "skillsCloud"] | order(order asc)';
         const skillsDatabaseQuery = '*[_type == "skillsDatabase"] | order(order asc)';
+        const certificationsQuery = '*[_type == "certifications"] | order(order asc)';
+
 
         client.fetch(skillsFrontEndQuery)
             .then((data) => {
@@ -59,6 +62,10 @@ const MainSkill = () => {
                 setSkillsDatabase(data)
             })
 
+        client.fetch(certificationsQuery)
+            .then((data) => {
+                setCertifications(data)
+            })
     },[])
 
 
@@ -215,6 +222,30 @@ const MainSkill = () => {
                 {/*<ReactMarkdown children={singleProject.bio} remarkPlugins={[remarkGfm]} />*/}
                 <div className='app__skills-container' style={{margin: '3rem auto'}}>
                     <div>
+
+                        {mainSkill.slug.current === 'cloud' && (
+                            <>
+                                <h4 className='head-text app__skills-heading'  style={{marginTop: '30px', marginRight: '0'}}>Cloud Certifications</h4>
+
+                                <motion.div className='app__skills-list' style={{marginRight: '0'}}>
+                                    {certifications?.map((certification) => (
+                                        <motion.div
+                                            whileInView={{opacity: [0,1]}}
+                                            transition={{duration: 0.5}}
+                                            className='app__cert-item app__flex'
+                                            key={certification.title}
+                                        >
+                                            <a href={certification.verifyLink} target='_blank' rel="noreferrer">
+                                                <div className='app__flex' style={{height: '150px', width: '150px'}}>
+                                                    <img style={{height: '100%', width: '100%'}} src={urlFor(certification.imgUrl)} alt={certification.title}/>
+                                                </div>
+                                            </a>
+                                            <p className='p-text'>{certification.title}</p>
+                                        </motion.div>
+                                    ))}
+                                </motion.div>
+                            </>
+                            )}
 
                         {mainSkill.slug.current === 'frontend' && (
                             <>
