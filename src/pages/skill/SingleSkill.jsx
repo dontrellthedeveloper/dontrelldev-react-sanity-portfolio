@@ -35,6 +35,7 @@ import './SingleSkill.scss';
 import {Helmet} from "react-helmet";
 import ReactTooltip from "react-tooltip";
 import {TbListDetails} from "react-icons/tb";
+import {BallCanvas} from "../../components/canvas";
 
 
 
@@ -213,7 +214,12 @@ const SingleSkill = () => {
 
             </div>
 
+            {/*<div className='app__skill-item3 app__flex' style={{marginTop: '0'}}>*/}
 
+                <div className='app__flex' style={{height: '300px', width: '300px', backgroundColor:'#fff', display: 'block', margin: '30px auto', borderRadius: '10px' }} >
+                    <BallCanvas icon={urlFor(singleSkill.icon)} />
+                </div>
+            {/*</div>*/}
 
 
             <motion.div
@@ -221,49 +227,46 @@ const SingleSkill = () => {
                 transition={{duration: 0.5, delayChildren: 0.5}}
                 className='app__work-portfolio'
             >
-                <div className='app__skill-item3 app__flex' style={{marginTop: '0'}}>
+                {/*<BallCanvas icon={urlFor(singleSkill.icon)} />*/}
 
-                    <div className='app__work-img2 app__flex'>
-                        <img src={urlFor(singleSkill.icon)} alt={singleSkill.name} />
-                        <motion.div
-                            whileHover={{opacity: [0,1]}}
-                            transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
-                            className='app__work-hover app__flex'
-                        >
-                            <a href={singleSkill.skillWebsite} target='_blank' rel="noreferrer">
-                                <motion.div
-                                    whileInView={{scale: [0, 1]}}
-                                    whileHover={{scale: [1,0.9]}}
-                                    transition={{duration: 0.25}}
-                                    className='app__flex'
-                                >
-                                    {/*<AiFillGithub/>*/}
-                                    <TbListDetails/>
-                                </motion.div>
-                            </a>
-                        </motion.div>
-                    </div>
+                {/*<div className='app__skill-item3 app__flex' style={{marginTop: '0'}}>*/}
 
+                {/*    <div className='app__work-img2 app__flex'>*/}
 
-                    <div className='app__work-content app__flex' style={{display: "none"}}>
+                {/*        <p className='p-text'>Click here to Visit Documentation</p>*/}
 
-                        <h4 className='bold-text'>{singleSkill.name}</h4>
-                        <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{singleSkill.name}</p>
+                {/*        <motion.div*/}
+                {/*            whileHover={{opacity: [0,1]}}*/}
+                {/*            transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}*/}
+                {/*            className='app__work-hover app__flex'*/}
+                {/*        >*/}
+                {/*            <a href={singleSkill.skillWebsite} target='_blank' rel="noreferrer">*/}
+                {/*                <motion.div*/}
+                {/*                    whileInView={{scale: [0, 1]}}*/}
+                {/*                    whileHover={{scale: [1,0.9]}}*/}
+                {/*                    transition={{duration: 0.25}}*/}
+                {/*                    className='app__flex'*/}
+                {/*                >*/}
+                {/*                    <TbListDetails style={{width: '12px'}}/>*/}
+                {/*                </motion.div>*/}
+                {/*            </a>*/}
+                {/*        </motion.div>*/}
+                {/*    </div>*/}
 
 
+                {/*    <div className='app__work-content app__flex' style={{display: "none"}}>*/}
+
+                {/*        <h4 className='bold-text'>{singleSkill.name}</h4>*/}
+                {/*        <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{singleSkill.name}</p>*/}
 
 
-                        {/*<div className='app__work-tag2 app__flex'>*/}
-                        {/*    <p className='p-text'>{singleProject.tags[0]}</p>*/}
-                        {/*</div>*/}
 
+                {/*        <div className='app__work-tag app__flex'>*/}
+                {/*            <p className='p-text'>Click to Visit Website</p>*/}
+                {/*        </div>*/}
 
-                        <div className='app__work-tag app__flex'>
-                            <p className='p-text'>Click to Visit Website</p>
-                        </div>
-
-                    </div>
-                </div>
+                {/*    </div>*/}
+                {/*</div>*/}
             </motion.div>
 
 
