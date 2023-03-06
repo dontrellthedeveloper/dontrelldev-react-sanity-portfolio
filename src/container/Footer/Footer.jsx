@@ -47,7 +47,7 @@ const Footer = () => {
     return (
         <>
             <motion.div
-                // style={{height: '600px', width: '600px'}}
+                // style={{height: '300px', width: '300px'}}
                 variants={slideIn("right", "tween", 0.2, 1)}
                 className='earth__canvas-styles xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
             >
