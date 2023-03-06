@@ -6,6 +6,8 @@ import {motion} from "framer-motion";
 import {images} from "../../constants";
 import {client, urlFor} from "../../client";
 import {AiFillGithub, AiOutlineLink} from "react-icons/ai";
+import Tilt from "react-tilt";
+import { fadeIn } from "../../utils/motion";
 
 import Div100vh from 'react-div-100vh'
 import { use100vh } from 'react-div-100vh'
@@ -23,6 +25,11 @@ const scaleVariants = {
         }
     }
 }
+
+
+
+
+
 
 const VideoHeader = () => {
     const [abouts, setAbouts] = useState([]);
@@ -110,7 +117,23 @@ const VideoHeader = () => {
 
                 <div className='video__profiles'>
                     {skills.map((skill, index) => (
+
+
+                        <Tilt
+                            options={{
+                                max: 45,
+                                scale: 1,
+                                speed: 450,
+                            }}
+                            className='xs:w-[250px] w-full'>
+                            {/*<motion.div*/}
+                            {/*    variants={fadeIn("right", "spring", index * 0.5, 0.75)}*/}
+                            {/*    className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'*/}
+                            {/*>*/}
+
+
                             <motion.div
+                                variants={fadeIn("right", "spring", index * 0.5, 0.75)}
                                 whileInView={{opacity: 1}}
                                 // whileHover={{scale: 1.1}}
                                 transition={{duration: 0.5, type: 'tween'}}
@@ -157,6 +180,7 @@ const VideoHeader = () => {
                                     {/*</div>*/}
                                 </div>
                             </motion.div>
+                        </Tilt>
 
 
 
@@ -211,20 +235,34 @@ const VideoHeader = () => {
                     ))}
                 </div>
 
-                {/*<motion.div*/}
-                {/*    variants={scaleVariants}*/}
-                {/*    whileInView={scaleVariants.whileInView}*/}
-                {/*    className='video__header-circles'*/}
-                {/*>*/}
-                {/*    {[images.flutter, images.redux, images.sass].map((circle, index) => (*/}
-                {/*        <div className='circle-cmp app__flex' key={`circle-${index}`}>*/}
-                {/*            <img src={circle} alt="circle"/>*/}
-                {/*        </div>*/}
-                {/*    ))}*/}
-                {/*</motion.div>*/}
+                {/*<Tilt*/}
+                {/*    options={{*/}
+                {/*        max: 45,*/}
+                {/*        scale: 1,*/}
+                {/*        speed: 450,*/}
+                {/*    }}*/}
+                {/*    className='xs:w-[250px] w-full'>*/}
+                {/*    <motion.div*/}
+                {/*        variants={fadeIn("right", "spring", index * 0.5, 0.75)}*/}
+                {/*        className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'*/}
+                {/*    >*/}
+                {/*        <div*/}
 
-                {/*<h1>👋👨🏾‍💻</h1>*/}
-                {/*<h3>Hi, I'm Dontrell</h3>*/}
+                {/*            className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'*/}
+                {/*        >*/}
+                {/*            <img*/}
+                {/*                src=""*/}
+                {/*                alt='web-development'*/}
+                {/*                className='w-16 h-16 object-contain'*/}
+                {/*            />*/}
+
+                {/*            <h3 className='text-white text-[20px] font-bold text-center'>*/}
+                {/*                Test*/}
+                {/*            </h3>*/}
+                {/*        </div>*/}
+                {/*    </motion.div>*/}
+                {/*</Tilt>*/}
+
             </Div100vh>
         </Div100vh>
 

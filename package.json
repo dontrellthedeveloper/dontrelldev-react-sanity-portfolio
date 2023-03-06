@@ -20,6 +20,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-syntax-highlighter": "^15.5.0",
+    "react-tilt": "^0.1.4",
     "react-tooltip": "^4.2.21",
     "remark-gfm": "^3.0.1",
     "web-vitals": "^2.1.4"

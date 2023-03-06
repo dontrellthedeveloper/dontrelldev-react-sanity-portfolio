@@ -10,6 +10,9 @@ import './Work.scss';
 import {Link} from "react-router-dom";
 import {TbListDetails} from "react-icons/tb";
 
+import Tilt from "react-tilt";
+import { fadeIn } from "../../utils/motion";
+
 const Work = () => {
     const [activeFilter, setActiveFilter] = useState('All');
     const [animateCard, setAnimateCard] = useState({y: 0, opacity: 1});
@@ -64,6 +67,18 @@ const Work = () => {
                 className='app__work-portfolio'
             >
                 {filterWork.map((work, index) => (
+
+                    <Tilt
+                        options={{
+                            max: 25,
+                            scale: 1,
+                            speed: 250,
+                        }}
+                        className='xs:w-[250px] w-full'>
+
+                        <motion.div
+                            variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+                        >
 
                         <div className='app__work-item app__flex' key={index} >
 
@@ -133,6 +148,9 @@ const Work = () => {
 
                             </div>
                         </div>
+                        </motion.div>
+
+                    </Tilt>
 
                 ))}
             </motion.div>
