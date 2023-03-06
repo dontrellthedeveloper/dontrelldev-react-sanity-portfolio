@@ -54,42 +54,43 @@ const Footer = () => {
                 <EarthCanvas />
             </motion.div>
 
-            <h2 className="head-text" style={{color: '#fff'}}>Let's Chat</h2>
+            <>
+                <h2 className="head-text" style={{color: '#fff'}}>Let's Chat</h2>
 
-            <div className="app__footer-cards">
-                <div className="app__footer-card ">
-                    <img src={images.email2} alt="email" />
-                    <a href="mailto:dontrellthedeveloper@gmail.com" className="p-text" rel="noreferrer">dontrellthedeveloper@gmail.com</a>
+                <div className="app__footer-cards">
+                    <div className="app__footer-card ">
+                        <img src={images.email2} alt="email" />
+                        <a href="mailto:dontrellthedeveloper@gmail.com" className="p-text" rel="noreferrer">dontrellthedeveloper@gmail.com</a>
+                    </div>
+                    <div className="app__footer-card">
+                        <img src={images.mobile} alt="phone" />
+                        <a href="tel:+1 (404) 301-9007" className="p-text">+1 (754) 422-0765</a>
+                    </div>
                 </div>
-                <div className="app__footer-card">
-                    <img src={images.mobile} alt="phone" />
-                    <a href="tel:+1 (404) 301-9007" className="p-text">+1 (754) 422-0765</a>
-                </div>
-            </div>
-            {!isFormSubmitted ? (
-                <form
-                    action='https://formspree.io/f/myyvznjz'
-                    method='POST'
-                    className="app__footer-form app__flex">
-                    <div className="app__flex">
-                        <input className="p-text" type="text" placeholder="Name..." name="name"
-                               // value={username}
-                               // onChange={handleChangeInput}
-                        />
-                    </div>
-                    <div className="app__flex">
-                        <input className="p-text" type="email" placeholder="Email..." name="email"
-                               // value={email}
-                               // onChange={handleChangeInput}
-                        />
-                    </div>
-                    <div className="app__flex">
-                        <input className="p-text" type="text" placeholder="Phone Number..." name="phone"
-                            // value={email}
-                            // onChange={handleChangeInput}
-                        />
-                    </div>
-                    <div>
+                {!isFormSubmitted ? (
+                    <form
+                        action='https://formspree.io/f/myyvznjz'
+                        method='POST'
+                        className="app__footer-form app__flex">
+                        <div className="app__flex">
+                            <input className="p-text" type="text" placeholder="Name..." name="name"
+                                // value={username}
+                                // onChange={handleChangeInput}
+                            />
+                        </div>
+                        <div className="app__flex">
+                            <input className="p-text" type="email" placeholder="Email..." name="email"
+                                // value={email}
+                                // onChange={handleChangeInput}
+                            />
+                        </div>
+                        <div className="app__flex">
+                            <input className="p-text" type="text" placeholder="Phone Number..." name="phone"
+                                // value={email}
+                                // onChange={handleChangeInput}
+                            />
+                        </div>
+                        <div>
                     <textarea
                         className="p-text"
                         placeholder="Message..."
@@ -97,21 +98,23 @@ const Footer = () => {
                         name="message"
                         // onChange={handleChangeInput}
                     />
-                    </div>
-                    <button type="submit" className="p-text"
+                        </div>
+                        <button type="submit" className="p-text"
                             // onClick={handleSubmit}
-                    >
-                        {!loading ? 'Send Message' : 'Sending...'}
-                    </button>
-                </form>
-            ) : (
-                <div>
-                    <h3 className="head-text">
-                        Thank you for getting in touch!
-                    </h3>
-                </div>
+                        >
+                            {!loading ? 'Send Message' : 'Sending...'}
+                        </button>
+                    </form>
+                ) : (
+                    <div>
+                        <h3 className="head-text">
+                            Thank you for getting in touch!
+                        </h3>
+                    </div>
 
-            )}
+                )}
+            </>
+
         </>
     );
 };

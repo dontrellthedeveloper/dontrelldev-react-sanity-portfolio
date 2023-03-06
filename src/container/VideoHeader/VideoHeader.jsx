@@ -14,6 +14,7 @@ import { use100vh } from 'react-div-100vh'
 import AutoPlaySilentVideo from "../../components/VideoSilent";
 import {Link} from "react-router-dom";
 import {TbListDetails} from "react-icons/tb";
+import ComputersCanvas from "../../components/canvas/Computer";
 
 const scaleVariants = {
     whileInView: {
@@ -115,7 +116,14 @@ const VideoHeader = () => {
 
 
 
-                <div className='video__profiles'>
+
+
+                <div className='video__profiles'
+                     // style={{width: '1100px', height: '800px'}}
+                >
+
+                    {/*<ComputersCanvas />*/}
+
                     {skills.map((skill, index) => (
 
 
@@ -140,6 +148,7 @@ const VideoHeader = () => {
                                 className="video__profile-item"
                                 key={skill.name + index}
                             >
+
 
                                 <div className='video__about-item '>
                                     <div className='video__work-img video__flex'>

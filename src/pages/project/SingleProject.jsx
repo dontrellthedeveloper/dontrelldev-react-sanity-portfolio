@@ -11,6 +11,7 @@ import {AiFillChrome, AiFillGithub, AiOutlineArrowLeft, AiOutlineArrowRight, AiO
 
 import './SingleProject.scss';
 import {Helmet} from "react-helmet";
+import {BallCanvas} from "../../components/canvas";
 
 const SingleProject = () => {
     const [singleProject, setSingleProject] = useState(null);
@@ -30,6 +31,12 @@ const SingleProject = () => {
             description,
             bio,
             bio2,
+            icon{
+                asset->{
+                    _id,
+                    url
+                }
+            },
             imgUrl{
                 asset->{
                     _id,
@@ -107,7 +114,7 @@ const SingleProject = () => {
                     transition={{duration: 0.5, delayChildren: 0.5}}
                     className='app__work-portfolio'
                 >
-                    <div className='app__work-item2 app__flex' style={{marginTop: '0'}}>
+                    <div className='app__work-item2 app__flex' style={{marginTop: '0', marginBottom: '0'}}>
                         <a href={singleProject.projectLink} target='_blank' rel="noreferrer">
                         <div className='app__work-img2 app__flex'>
                             <img src={urlFor(singleProject.imgUrl2)} alt={singleProject.title} />
@@ -164,6 +171,11 @@ const SingleProject = () => {
                         </div>
                     </div>
                 </motion.div>
+
+
+            <div className='app__flex' style={{height: '150px', width: '150px', backgroundColor:'', display: 'block', margin: '0px auto', borderRadius: '10px' }} >
+                <BallCanvas icon={urlFor(singleProject.icon)} />
+            </div>
 
 
 
