@@ -143,7 +143,11 @@ const VideoHeader = () => {
 
                                 <div className='video__about-item '>
                                     <div className='video__work-img video__flex'>
+
+
                                         <img src={urlFor(skill.imgUrl)} alt={skill.name}/>
+
+
                                         <motion.div
                                             whileHover={{opacity: [0,1]}}
                                             transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}

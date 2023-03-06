@@ -13,6 +13,7 @@ import SkillPage from "./pages/skills/SkillPage";
 import {Helmet} from "react-helmet";
 import MainSkill from "./pages/mainSkill/MainSkill";
 import SingleSkill from "./pages/skill/SingleSkill";
+import StarsCanvas from "./components/canvas/Stars";
 
 const App = () => {
     return (
@@ -39,7 +40,11 @@ const App = () => {
                     <Route path='/portfolio' element={<WorkPage/>} />
                     <Route path='/skills' element={<SkillPage/>} />
                 </Routes>
-                <Footer/>
+                <div style={{position: "relative", zIndex: '0'}}>
+                    <Footer/>
+                    <StarsCanvas />
+                </div>
+
             </div>
     );
 }
