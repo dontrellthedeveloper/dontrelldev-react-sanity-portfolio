@@ -2,6 +2,7 @@ import React, {useRef, useEffect} from "react"
 import videoBg from '../assets/websitewarehouse10.mp4';
 
 export default function AutoPlaySilentVideo(props) {
+    console.log(props.className)
     const videoRef = useRef(undefined);
     useEffect(() => {
         videoRef.current.defaultMuted = true;

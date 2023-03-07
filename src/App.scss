@@ -7,7 +7,9 @@
 /* ================================================
 |   |   |   |   Preloader
 ================================================ */
-
+::-webkit-scrollbar {
+  display: none;
+}
 
 .stars__canvas-styles {
   position: absolute;
