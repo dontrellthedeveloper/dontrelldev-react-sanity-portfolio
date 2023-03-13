@@ -68,13 +68,13 @@ const Work = () => {
             >
                 {filterWork.map((work, index) => (
 
-                    <Tilt
-                        options={{
-                            max: 25,
-                            scale: 1,
-                            speed: 250,
-                        }}
-                        className='xs:w-[250px] w-full'>
+                    // <Tilt
+                    //     options={{
+                    //         max: 25,
+                    //         scale: 1,
+                    //         speed: 250,
+                    //     }}
+                    //     className='xs:w-[250px] w-full'>
 
                         <motion.div
                             variants={fadeIn("right", "spring", index * 0.5, 0.75)}
@@ -149,8 +149,8 @@ const Work = () => {
                             </div>
                         </div>
                         </motion.div>
-
-                    </Tilt>
+                    //
+                    // </Tilt>
 
                 ))}
             </motion.div>

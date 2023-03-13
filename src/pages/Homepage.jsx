@@ -1,7 +1,7 @@
 import React from 'react';
 import {Navbar} from "../components";
 import VideoHeader from "../container/VideoHeader/VideoHeader";
-import {Footer, Skills, Testimonial, Work} from "../container";
+import {About, Footer, Skills, Testimonial, Work} from "../container";
 import Tech from "../container/Tech";
 
 const Homepage = () => {
@@ -10,7 +10,7 @@ const Homepage = () => {
             <VideoHeader/>
             <Work/>
             <Skills/>
-
+            <About/>
 
 
             {/*<Testimonial/>*/}

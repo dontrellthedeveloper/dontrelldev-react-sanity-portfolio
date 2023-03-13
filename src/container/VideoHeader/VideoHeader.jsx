@@ -7,7 +7,7 @@ import {images} from "../../constants";
 import {client, urlFor} from "../../client";
 import {AiFillGithub, AiOutlineLink} from "react-icons/ai";
 import Tilt from "react-tilt";
-import { fadeIn } from "../../utils/motion";
+import {fadeIn, slideIn} from "../../utils/motion";
 
 import Div100vh from 'react-div-100vh'
 import { use100vh } from 'react-div-100vh'
@@ -35,6 +35,7 @@ const scaleVariants = {
 const VideoHeader = () => {
     const [abouts, setAbouts] = useState([]);
     const [skills, setSkills] = useState([]);
+    const [animateCard, setAnimateCard] = useState({y: 0, opacity: 1});
 
     const height = use100vh()
 
@@ -118,34 +119,31 @@ const VideoHeader = () => {
 
 
 
-                <div className='video__profiles'
-                     // style={{width: '1100px', height: '800px'}}
+                <motion.div
+                    className='video__profiles'
+                    // animate={animateCard}
+                    // variants={slideIn("right", "tween", 0.2, 1)}
+                    //
+                    // transition={{duration: 0.5, delayChildren: 0.5}}
                 >
 
                     {/*<ComputersCanvas />*/}
 
                     {skills.map((skill, index) => (
-
-
-                        <Tilt
-                            options={{
-                                max: 45,
-                                scale: 1,
-                                speed: 450,
-                            }}
-                            className='xs:w-[250px] w-full'>
-                            {/*<motion.div*/}
-                            {/*    variants={fadeIn("right", "spring", index * 0.5, 0.75)}*/}
-                            {/*    className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'*/}
-                            {/*>*/}
-
+                        // <Tilt
+                        //     options={{
+                        //         max: 45,
+                        //         scale: 1,
+                        //         speed: 450,
+                        //     }}
+                        //     className='xs:w-[250px] w-full'>
 
                             <motion.div
-                                variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+                                // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
                                 whileInView={{opacity: 1}}
-                                // whileHover={{scale: 1.1}}
+                                whileHover={{scale: 1.1}}
                                 transition={{duration: 0.5, type: 'tween'}}
-                                className="video__profile-item"
+                                className="app__profile-item"
                                 key={skill.name + index}
                             >
 
@@ -186,14 +184,9 @@ const VideoHeader = () => {
                                         {/*<h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>Visit GitHub*/}
                                         {/*</h2>*/}
                                     </div>
-                                    {/*<h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>{about.title}</h2>*/}
-                                    {/*<p className="video__card-desc bold-text" style={{marginTop: 20}}>{about.description}</p>*/}
-                                    {/*<div className='video__work-tag video__flex'>*/}
-                                    {/*    <p className='p-text'>{about.title}</p>*/}
-                                    {/*</div>*/}
                                 </div>
                             </motion.div>
-                        </Tilt>
+                        // </Tilt>
 
 
 
@@ -246,7 +239,7 @@ const VideoHeader = () => {
 
 
                     ))}
-                </div>
+                </motion.div>
 
                 {/*<Tilt*/}
                 {/*    options={{*/}
