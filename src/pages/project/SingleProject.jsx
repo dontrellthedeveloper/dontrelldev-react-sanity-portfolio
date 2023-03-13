@@ -83,15 +83,11 @@ const SingleProject = () => {
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
-                    // href="%PUBLIC_URL%/logo152.png"
                     href={urlFor(singleProject.imgUrl).width(800).height(800).url()}
                 />
             </Helmet>
             <div className='single-product__markdown2' style={{textAlign: 'center'}}>
                 <ReactMarkdown children={singleProject.bio2} remarkPlugins={[remarkGfm]} />
-                {/*<Link to='/portfolio' className='work__all-projects'>*/}
-                {/*    <p style={{marginBottom: '20px'}}><AiOutlineArrowLeft/> All Projects</p>*/}
-                {/*</Link>*/}
 
 
                 <div className='row app__flex' style={{marginBottom: '20px'}}>
@@ -131,7 +127,6 @@ const SingleProject = () => {
                                         transition={{duration: 0.25}}
                                         className='app__flex'
                                     >
-                                        {/*<AiFillEye/>*/}
                                         <AiFillChrome/>
                                     </motion.div>
                                 </a>
@@ -158,11 +153,6 @@ const SingleProject = () => {
                             <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{singleProject.description}</p>
 
 
-
-
-                            {/*<div className='app__work-tag2 app__flex'>*/}
-                            {/*    <p className='p-text'>{singleProject.tags[0]}</p>*/}
-                            {/*</div>*/}
 
 
                             <div className='app__work-tag app__flex'>
@@ -238,14 +228,6 @@ const SingleProject = () => {
 
 
 
-                            {/*<div className='app__work-tag2 app__flex'>*/}
-                            {/*    <p className='p-text'>{singleProject.tags[0]}</p>*/}
-                            {/*</div>*/}
-
-
-                            {/*<div className='app__work-tag app__flex'>*/}
-                            {/*    <p className='p-text'>Click to visit Website</p>*/}
-                            {/*</div>*/}
 
                         </div>
                     </div>
@@ -300,15 +282,6 @@ const SingleProject = () => {
 
 
 
-
-                            {/*<div className='app__work-tag2 app__flex'>*/}
-                            {/*    <p className='p-text'>{singleProject.tags[0]}</p>*/}
-                            {/*</div>*/}
-
-
-                            {/*<div className='app__work-tag app__flex'>*/}
-                            {/*        <p className='p-text'>Click for More Details</p>*/}
-                            {/*</div>*/}
 
                         </div>
                     </div>
