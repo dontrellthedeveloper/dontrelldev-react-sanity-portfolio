@@ -131,7 +131,6 @@ const MainSkill = () => {
 
 
 
-    // const markdown = singleProject.bio
 
     return (
         <div>
@@ -144,7 +143,6 @@ const MainSkill = () => {
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
-                    // href="%PUBLIC_URL%/logo152.png"
                     href={urlFor(mainSkill.imgUrl).width(800).height(800).url()}
                 />
             </Helmet>
@@ -165,7 +163,6 @@ const MainSkill = () => {
                 </div>
 
 
-                {/*<Link to='#' onClick={() => navigate(-1)} className='work__all-projects'>*/}
             </div>
 
 
@@ -179,44 +176,6 @@ const MainSkill = () => {
                 transition={{duration: 0.5, delayChildren: 0.5}}
                 className='app__work-portfolio'
             >
-                {/*<div className='app__skill-item2 app__flex' style={{marginTop: '0'}}>*/}
-
-                {/*        <div className='app__work-img2 app__flex'>*/}
-                {/*            <img src={urlFor(mainSkill.imgUrl)} alt={mainSkill.name} />*/}
-                {/*            <motion.div*/}
-                {/*                whileHover={{opacity: [0,1]}}*/}
-                {/*                transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}*/}
-                {/*                className='app__work-hover app__flex'*/}
-                {/*            >*/}
-                {/*                <a href={mainSkill.skillWebsite} target='_blank' rel="noreferrer">*/}
-                {/*                    <motion.div*/}
-                {/*                        whileInView={{scale: [0, 1]}}*/}
-                {/*                        whileHover={{scale: [1,0.9]}}*/}
-                {/*                        transition={{duration: 0.25}}*/}
-                {/*                        className='app__flex'*/}
-                {/*                    >*/}
-                {/*                        /!*<AiFillGithub/>*!/*/}
-                {/*                        <TbListDetails/>*/}
-                {/*                    </motion.div>*/}
-                {/*                </a>*/}
-                {/*            </motion.div>*/}
-                {/*        </div>*/}
-
-
-                {/*    <div className='app__work-content app__flex' style={{display: "none"}}>*/}
-
-                {/*        <h4 className='bold-text'>{mainSkill.name}</h4>*/}
-                {/*        <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{mainSkill.description}</p>*/}
-
-
-
-
-                {/*        <div className='app__work-tag app__flex'>*/}
-                {/*            <p className='p-text'>Click to Visit Website</p>*/}
-                {/*        </div>*/}
-
-                {/*    </div>*/}
-                {/*</div>*/}
             </motion.div>
 
 

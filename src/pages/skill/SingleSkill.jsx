@@ -59,34 +59,11 @@ SyntaxHighlighter.registerLanguage('json', json)
 
 const SingleSkill = () => {
 
-    // const syntaxTheme = oneDark;
-    // const syntaxTheme = materialOceanic;
+
     const syntaxTheme = nord;
 
     const MarkdownComponents = {
 
-        // const styleMarkdown = css({
-        //     '.codeStyle, pre, code, code span': {
-        //         // Your SyntaxHighlighter override styles here
-        //     },
-        //     code: {
-        //         // Your general code styles here
-        //     },
-        //     'pre code': {
-        //         // Your code-block styles here
-        //     },
-        //     'h3 code': {
-        //         color: 'inherit'
-        //     },
-        //     'span.linenumber': {
-        //         display: 'none !important'
-        //     },
-        //     '[data="highlight"]': {
-        //         // Your custom line highlight styles here
-        //     }
-        // })
-
-        // SyntaxHighlight code will go here
         code({ node, inline, className, ...props }) {
 
             const match = /language-(\w+)/.exec(className || '')
@@ -142,13 +119,6 @@ const SingleSkill = () => {
         const query = '*[_type == "experiences"] | order(order asc)';
 
 
-        // client.fetch(query)
-        //     .then((data) => {
-        //         setExperience(data)
-        //     })
-
-
-
     },[])
 
 
@@ -178,8 +148,6 @@ const SingleSkill = () => {
 
 
 
-    // const markdown = singleProject.bio
-
     return (
 
 
@@ -193,7 +161,6 @@ const SingleSkill = () => {
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
-                    // href="%PUBLIC_URL%/logo152.png"
                     href={urlFor(singleSkill.icon).width(800).height(800).url()}
                 />
             </Helmet>
@@ -214,12 +181,12 @@ const SingleSkill = () => {
 
             </div>
 
-            {/*<div className='app__skill-item3 app__flex' style={{marginTop: '0'}}>*/}
+
 
                 <div className='app__flex' style={{height: '300px', width: '300px', backgroundColor:'#fff', display: 'block', margin: '30px auto', borderRadius: '10px' }} >
                     <BallCanvas icon={urlFor(singleSkill.icon)} />
                 </div>
-            {/*</div>*/}
+
 
 
             <motion.div
@@ -227,46 +194,6 @@ const SingleSkill = () => {
                 transition={{duration: 0.5, delayChildren: 0.5}}
                 className='app__work-portfolio'
             >
-                {/*<BallCanvas icon={urlFor(singleSkill.icon)} />*/}
-
-                {/*<div className='app__skill-item3 app__flex' style={{marginTop: '0'}}>*/}
-
-                {/*    <div className='app__work-img2 app__flex'>*/}
-
-                {/*        <p className='p-text'>Click here to Visit Documentation</p>*/}
-
-                {/*        <motion.div*/}
-                {/*            whileHover={{opacity: [0,1]}}*/}
-                {/*            transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}*/}
-                {/*            className='app__work-hover app__flex'*/}
-                {/*        >*/}
-                {/*            <a href={singleSkill.skillWebsite} target='_blank' rel="noreferrer">*/}
-                {/*                <motion.div*/}
-                {/*                    whileInView={{scale: [0, 1]}}*/}
-                {/*                    whileHover={{scale: [1,0.9]}}*/}
-                {/*                    transition={{duration: 0.25}}*/}
-                {/*                    className='app__flex'*/}
-                {/*                >*/}
-                {/*                    <TbListDetails style={{width: '12px'}}/>*/}
-                {/*                </motion.div>*/}
-                {/*            </a>*/}
-                {/*        </motion.div>*/}
-                {/*    </div>*/}
-
-
-                {/*    <div className='app__work-content app__flex' style={{display: "none"}}>*/}
-
-                {/*        <h4 className='bold-text'>{singleSkill.name}</h4>*/}
-                {/*        <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{singleSkill.name}</p>*/}
-
-
-
-                {/*        <div className='app__work-tag app__flex'>*/}
-                {/*            <p className='p-text'>Click to Visit Website</p>*/}
-                {/*        </div>*/}
-
-                {/*    </div>*/}
-                {/*</div>*/}
             </motion.div>
 
 
@@ -274,11 +201,9 @@ const SingleSkill = () => {
 
 
             <div className='single-skill__markdown' style={{textAlign: 'center'}}>
-                {/*<ReactMarkdown children={singleSkill.bio} remarkPlugins={[remarkGfm]} />*/}
 
                 <ReactMarkdown
                     components={MarkdownComponents}
-                    // css={styleMarkdown}
                 >
                     {singleSkill.bio}
                 </ReactMarkdown>
