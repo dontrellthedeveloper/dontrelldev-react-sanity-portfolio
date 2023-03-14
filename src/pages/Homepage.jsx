@@ -10,7 +10,7 @@ const Homepage = () => {
             <VideoHeader/>
             <Work/>
             <Skills/>
-            <About/>
+            {/*<About/>*/}
 
 
             {/*<Testimonial/>*/}
