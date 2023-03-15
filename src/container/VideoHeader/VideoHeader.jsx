@@ -64,15 +64,8 @@ const VideoHeader = () => {
         <div className='video-bg' style={{height: '100vh'}}>
             <div className="video-overlay"></div>
             <AutoPlaySilentVideo/>
-            {/*<div dangerouslySetInnerHTML={{*/}
-            {/*    __html: `<video autoplay loop muted playsinline>*/}
-            {/*                    <source src=${videoBg} type="video/mp4" />*/}
-            {/*                            Your browser does not support the video tag.*/}
-            {/*                     </video>`,*/}
-            {/*}}>*/}
 
-            {/*</div>*/}
-            <div className="video-text" style={{height: '100vh'}}>
+            <div className="video-text">
 
                 <h2 className='video-head-text'>
                     {/*I know That <span>Good Apps</span><br/>means <span>Good Business</span>*/}
