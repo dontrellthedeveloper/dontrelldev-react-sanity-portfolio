@@ -61,7 +61,7 @@ const VideoHeader = () => {
     return (
 
 
-        <Div100vh className='video-bg'>
+        <div className='video-bg' style={{height: '100vh'}}>
             <div className="video-overlay"></div>
             <AutoPlaySilentVideo/>
             {/*<div dangerouslySetInnerHTML={{*/}
@@ -72,7 +72,7 @@ const VideoHeader = () => {
             {/*}}>*/}
 
             {/*</div>*/}
-            <Div100vh className="video-text">
+            <div className="video-text" style={{height: '100vh'}}>
 
                 <h2 className='video-head-text'>
                     {/*I know That <span>Good Apps</span><br/>means <span>Good Business</span>*/}
@@ -269,8 +269,8 @@ const VideoHeader = () => {
                 {/*    </motion.div>*/}
                 {/*</Tilt>*/}
 
-            </Div100vh>
-        </Div100vh>
+            </div>
+        </div>
 
     );
 };
