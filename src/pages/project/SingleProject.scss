@@ -80,6 +80,18 @@
   }
 }
 
+#light .app__work-portfolio {
+  .app__work-item2 {
+    background-color: #fff;
+  }
+}
+
+#dark .app__work-portfolio {
+  .app__work-item2 {
+    background-color: var(--dp12);
+  }
+}
+
 .app__work-item-img {
   display: flex;
   max-width: 1200px;

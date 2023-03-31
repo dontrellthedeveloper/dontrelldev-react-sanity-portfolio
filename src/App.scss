@@ -529,6 +529,43 @@
   }
 }
 
+#light .single-product__markdown {
+  //margin-top: 150px;
+  background: #fff;
+  padding: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media(max-width: 767px) {
+    margin-bottom: 1rem;
+  }
+}
+
+#dark .single-product__markdown {
+  //margin-top: 150px;
+  background: var(--dp06);
+  padding: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  p {
+    color: #e2e8f0;
+  }
+
+  h3 {
+    color: #e2e8f0;
+  }
+  @media(max-width: 767px) {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}
+
 .single-product__markdown2 {
   //margin-top: 150px;
   padding: 2rem;
@@ -538,6 +575,35 @@
   padding-bottom: 0;
 }
 
+#light .single-product__markdown2 {
+  //margin-top: 150px;
+  padding: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0;
+}
+
+#dark .single-product__markdown2 {
+  //margin-top: 150px;
+  padding: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0;
+
+  p {
+    color: #fff;
+  }
+
+  h2 {
+    color: #e2e8f0;
+  }
+
+  h4 {
+    color: #e2e8f0;
+  }
+}
 
 .single-skill__markdown {
   background: #fff;
