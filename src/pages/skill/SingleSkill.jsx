@@ -183,7 +183,7 @@ const SingleSkill = () => {
 
 
 
-                <div className='app__flex' style={{height: '300px', width: '300px', backgroundColor:'#fff', display: 'block', margin: '30px auto', borderRadius: '10px' }} >
+                <div className='app__flex single-skill__canvas' style={{height: '300px', width: '300px', display: 'block', margin: '30px auto', borderRadius: '10px' }} >
                     <BallCanvas icon={urlFor(singleSkill.icon)} />
                 </div>
 

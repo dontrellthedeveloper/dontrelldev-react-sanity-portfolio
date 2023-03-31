@@ -670,6 +670,39 @@
 
 }
 
+#light .single-skill__markdown {
+  background: #fff;
+}
+
+#dark .single-skill__markdown {
+  background: var(--dp06);
+
+  p {
+    color: #e2e8f0;
+  }
+
+  h2 {
+    color: #fff;
+  }
+
+  h3 {
+    color: #fff;
+  }
+}
+
+
+.single-skill__canvas {
+  background-color: #fff;
+}
+
+#light .single-skill__canvas {
+  background-color: #fff;
+}
+
+#dark .single-skill__canvas {
+  background-color: var(--dp06);
+}
+
 
 .main-skills__items {
   //margin-top: 150px;
