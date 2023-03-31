@@ -110,6 +110,27 @@
 }
 
 
+#light .app__skills-item {
+  div {
+    background-color: #fff;
+    &:hover {
+      box-shadow: 0 0 25px #fef4f5;
+      background-color: rgba(110, 149, 196, 0.25) !important;
+    }
+  }
+}
+
+
+#dark .app__skills-item {
+  div {
+    background-color: var(--dp16) !important;
+    &:hover {
+      box-shadow: 0 0 25px var(--dp24);
+      background-color: var(--dark-hover) !important;
+    }
+  }
+}
+
 
 .app__cert-item {
   flex-direction: column;
@@ -123,7 +144,7 @@
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: #fff;
+    //background-color: #fff;
 
     img {
       width: 50%;
@@ -131,7 +152,7 @@
     }
 
     &:hover {
-      box-shadow: 0 0 25px #fef4f5;
+      //box-shadow: 0 0 25px #fef4f5;
       //background-color: rgba(110, 149, 196, 0.25) !important;
       transition: all 0.3s ease;
 
@@ -161,6 +182,11 @@
     }
   }
 }
+
+
+
+
+
 
 .app__skills-exp {
   flex: 1;
