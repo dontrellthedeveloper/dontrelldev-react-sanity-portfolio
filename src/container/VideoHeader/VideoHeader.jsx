@@ -72,6 +72,7 @@ const VideoHeader = () => {
                     whileInView={{opacity: [0,1]}}
                     transition={{duration: 0.5, delayChildren: 0.5}}
                     className='video__header-img'
+                    style={{display: 'none'}}
                 >
                     <img src={images.profile2} alt="profile_bg"/>
                     <motion.img

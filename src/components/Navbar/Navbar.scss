@@ -38,6 +38,17 @@
   }
 }
 
+
+#light .app__navbar-scroll {
+  background: rgba(255, 255, 255, .8);
+}
+
+
+#dark .app__navbar-scroll {
+  background: rgba(18, 18, 18, .85);
+}
+
+
 .app__navbar-logo {
   display: flex;
   justify-content: flex-start;
@@ -63,8 +74,8 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  //margin-right: 100px;
-  margin-right: 160px;
+  margin-right: 45px;
+  //margin-right: 160px;
 
   li {
     margin: 0 1rem;
@@ -104,14 +115,46 @@
 
 
 
-
-
-
   @media screen and (max-width: 900px) {
     display: none;
   }
 }
 
+
+#light  .app__navbar-links {
+  li {
+    a {
+      color:  var(--secondary-color);
+
+      &:hover {
+        color: var(--gray-color)
+      }
+    }
+    &:hover {
+      div {
+        background-color: var(--secondary-color)
+      }
+    }
+  }
+}
+
+
+#dark  .app__navbar-links {
+  li {
+    a {
+      color:  var(--primary-color) !important;
+
+      &:hover {
+        color: var(--gray-color)
+      }
+    }
+    &:hover {
+      div {
+        background-color: var(--primary-color)
+      }
+    }
+  }
+}
 
 .app__navbar-switch {
   //flex: 1;
@@ -119,9 +162,59 @@
   justify-content: right;
   align-items: center;
   list-style: none;
-  //margin-right: 100px;
-  //margin-right: 160px;
+  //color:  var(--secondary-color);
+  font-weight: 800;
+
+  p {
+      color:  var(--secondary-color) !important;
+
+      &:hover {
+        color: var(--gray-color)
+      }
+
+    &:hover {
+      div {
+        background-color: var(--secondary-color)
+      }
+    }
+  }
 }
+
+#light .app__navbar-switch {
+  p {
+    color:  var(--secondary-color) !important;
+    &:hover {
+      color: var(--gray-color)
+    }
+    &:hover {
+      div {
+        background-color: var(--secondary-color)
+      }
+    }
+  }
+}
+
+#dark .app__navbar-switch {
+  p {
+    color:  var(--primary-color) !important;
+    &:hover {
+      color: var(--gray-color)
+    }
+    &:hover {
+      div {
+        background-color: var(--primary-color)
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
 
 .app__navbar-links-scroll {
   a {

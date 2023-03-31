@@ -44,6 +44,14 @@
   //background-color: rgba(0,0,0,.8);
 }
 
+#light .video-overlay {
+  background-color: #ffffffcc;
+}
+
+#dark .video-overlay {
+  //background-color: #121212cc;
+  background-color: rgba(18,18,18,.85);
+}
 
 .video__about-item {
   position: relative;
@@ -60,6 +68,14 @@
   &:hover {
     box-shadow: 0 0 25px rgba(0,0,0,0.2);
   }
+}
+
+#light .video__about-item {
+  background-color: #fff;
+}
+
+#dark .video__about-item {
+  background-color: var(--dp12);
 }
 
 
@@ -80,8 +96,17 @@
   top: 155px;
   //top: 55%;
   //margin-left: 50px;
-
 }
+
+#light .video__card-text {
+  background-color: #fff;
+}
+
+#dark .video__card-text {
+  background-color: var(--dp12);
+}
+
+
 
 .video__card-text2 {
   font-family: var(--font-base);
@@ -92,7 +117,6 @@
   top: -9px;
   //top: 55%;
   //margin-left: 50px;
-
 }
 
 

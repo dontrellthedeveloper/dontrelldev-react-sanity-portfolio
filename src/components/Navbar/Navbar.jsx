@@ -7,6 +7,8 @@ import {images} from "../../constants";
 import {NavLink} from "react-router-dom";
 import Switch from "react-switch";
 
+import {BsFillSunFill, BsFillMoonFill} from 'react-icons/bs'
+
 const Navbar = ({toggleTheme, theme}) => {
     const [toggle, setToggle] = useState(false);
     const [scroll, setScroll] = useState(false);
@@ -22,7 +24,7 @@ const Navbar = ({toggleTheme, theme}) => {
             <div style={{display: 'flex', maxWidth: '1200px', width: '100%', margin: '0 auto'}}>
                 <div className='app__navbar-logo'>
                     <NavLink to='/'>
-                        <img src={images.logoDark} alt="logo"/>
+                        <img src={theme === 'light' ? images.logoDark : images.logoLight} alt="logo"/>
                     </NavLink>
                 </div>
                 <ul className='app__navbar-links'>
@@ -57,14 +59,31 @@ const Navbar = ({toggleTheme, theme}) => {
                     {/*))}*/}
                 </ul>
                 <div className='app__navbar-switch'>
+
+                    <p className='app__flex p-text' style={{paddingRight: '10px'}}>
+                        {theme === 'light' ? (
+                            <>
+                                Light
+                                <BsFillSunFill style={{marginLeft: '5px'}}/>
+                            </>
+                        ) : (
+                            <>
+                                Dark
+                                <BsFillMoonFill style={{marginLeft: '5px'}}/>
+                            </>
+                        )}
+
+                    </p>
+
                     <Switch
                         checked={theme === 'dark'}
                         onChange={toggleTheme}
                         uncheckedIcon={false}
                         checkedIcon={false}
 
-                        // onColor={}
-                        // onHandleColor={}
+                        onColor='#808080'
+                        offColor='#a1a0a1'
+                        onHandleColor='#2C2C2C'
                     />
                 </div>
 
