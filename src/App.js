@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {createContext, useState} from 'react';
 import './App.scss';
 
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
@@ -15,9 +15,21 @@ import MainSkill from "./pages/mainSkill/MainSkill";
 import SingleSkill from "./pages/skill/SingleSkill";
 import StarsCanvas from "./components/canvas/Stars";
 
+
+export const ThemeContext = createContext(null)
+
+
+
 const App = () => {
+    const [theme, setTheme] = useState('light');
+
+    const toggleTheme = () => {
+        setTheme((current)=> (current === "light" ? "dark" : "light"))
+    }
+
     return (
-            <div className='app'>
+        <ThemeContext.Provider value={{toggleTheme}}>
+            <div className='app' id={theme}>
                 <Helmet>
                     <title>Web Development by Dontrell</title>
                     <meta
@@ -31,7 +43,7 @@ const App = () => {
                         href="%PUBLIC_URL%/dev2.png"
                     />
                 </Helmet>
-                <Navbar/>
+                <Navbar toggleTheme={toggleTheme} theme={theme}/>
                 <Routes>
                     <Route exact path='/' element={<Homepage/>} />
                     <Route path='/:slug' element={<SingleProject/>} />
@@ -46,6 +58,8 @@ const App = () => {
                 </div>
 
             </div>
+        </ThemeContext.Provider>
+
     );
 }
 

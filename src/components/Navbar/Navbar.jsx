@@ -5,8 +5,9 @@ import {motion} from 'framer-motion';
 import './Navbar.scss';
 import {images} from "../../constants";
 import {NavLink} from "react-router-dom";
+import Switch from "react-switch";
 
-const Navbar = () => {
+const Navbar = ({toggleTheme, theme}) => {
     const [toggle, setToggle] = useState(false);
     const [scroll, setScroll] = useState(false);
 
@@ -55,6 +56,18 @@ const Navbar = () => {
                     {/*    </li>*/}
                     {/*))}*/}
                 </ul>
+                <div className='app__navbar-switch'>
+                    <Switch
+                        checked={theme === 'dark'}
+                        onChange={toggleTheme}
+                        uncheckedIcon={false}
+                        checkedIcon={false}
+
+                        // onColor={}
+                        // onHandleColor={}
+                    />
+                </div>
+
             </div>
 
 

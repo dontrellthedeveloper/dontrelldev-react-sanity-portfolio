@@ -102,9 +102,25 @@
     }
   }
 
+
+
+
+
+
   @media screen and (max-width: 900px) {
     display: none;
   }
+}
+
+
+.app__navbar-switch {
+  //flex: 1;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  list-style: none;
+  //margin-right: 100px;
+  //margin-right: 160px;
 }
 
 .app__navbar-links-scroll {

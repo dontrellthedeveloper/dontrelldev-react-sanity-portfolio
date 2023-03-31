@@ -40,6 +40,46 @@
   }
 }
 
+
+
+#light .app__work-filter {
+  .app__work-filter-item {
+    background-color: #fff;
+    color: #000;
+    &:hover {
+      background-color: var(--secondary-color);
+      color: #fff;
+    }
+  }
+
+
+
+  .item-active {
+    background-color: var(--secondary-color);
+    color: #fff;
+  }
+}
+
+#dark .app__work-filter {
+  .app__work-filter-item {
+    background-color: var(--dp04);
+    //color: #000;
+    &:hover {
+      background-color: var(--dark-hover);
+      color: #fff;
+    }
+  }
+
+
+
+  .item-active {
+      background-color: var(--dark-hover);
+      color: #fff;
+  }
+}
+
+
+
 .app__work-portfolio {
   display: flex;
   flex-wrap: wrap;

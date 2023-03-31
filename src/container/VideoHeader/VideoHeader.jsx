@@ -67,31 +67,6 @@ const VideoHeader = () => {
 
             <div className="video-text">
 
-                <h2 className='video-head-text'>
-                    {/*I know That <span>Good Apps</span><br/>means <span>Good Business</span>*/}
-
-                    <motion.div
-                        whileInView={{x: [-100,0], opacity: [0,1]}}
-                        transition={{duration: 0.5}}
-                        className='video__header-info'
-                    >
-                        <div className='video__header-badge'>
-                            {/*<div className='badge-cmp video__flex'>*/}
-                            {/*    <span>👋</span>*/}
-                            {/*    <div style={{marginLeft: 20}}>*/}
-                            {/*        <p className='p-text'>Hello, I'm</p>*/}
-                            {/*        <h1 className='head-text'>Dontrell</h1>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-
-                            {/*<div className='tag-cmp video__flex'>*/}
-                            {/*    <p className='p-text'>Web Developer</p>*/}
-                            {/*    <p className='p-text'>Mobile Developer</p>*/}
-                            {/*</div>*/}
-                        </div>
-                    </motion.div>
-                </h2>
-
 
                 <motion.div
                     whileInView={{opacity: [0,1]}}
@@ -114,25 +89,13 @@ const VideoHeader = () => {
 
                 <motion.div
                     className='video__profiles'
-                    // animate={animateCard}
-                    // variants={slideIn("right", "tween", 0.2, 1)}
-                    //
-                    // transition={{duration: 0.5, delayChildren: 0.5}}
                 >
 
-                    {/*<ComputersCanvas />*/}
+
 
                     {skills.map((skill, index) => (
-                        // <Tilt
-                        //     options={{
-                        //         max: 45,
-                        //         scale: 1,
-                        //         speed: 450,
-                        //     }}
-                        //     className='xs:w-[250px] w-full'>
 
                             <motion.div
-                                // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
                                 whileInView={{opacity: 1}}
                                 whileHover={{scale: 1.1}}
                                 transition={{duration: 0.5, type: 'tween'}}
@@ -154,9 +117,6 @@ const VideoHeader = () => {
                                             className='video__work-hover video__flex'
                                         >
 
-
-                                            {/*<a href='https://github.com/dontrellthedeveloper' target='_blank' rel="noreferrer">*/}
-
                                                 <Link to={'/skill/' + skill.slug.current}>
 
                                                 <motion.div
@@ -174,93 +134,12 @@ const VideoHeader = () => {
                                         <h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>{skill.description}
                                         </h2>
 
-                                        {/*<h2 className="p-text video__card-text" style={{ textAlign: 'center'}}>Visit GitHub*/}
-                                        {/*</h2>*/}
+
                                     </div>
                                 </div>
                             </motion.div>
-                        // </Tilt>
-
-
-
-
-
-                        // <div className='app__work-item app__flex' key={index}>
-                        //     <div className='app__work-img app__flex'>
-                        //         <img src={urlFor(about.imgUrl)} alt={about.title} />
-                        //
-                        //         <motion.div
-                        //         whileHover={{opacity: [0,1]}}
-                        //         transition={{duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5}}
-                        //         className='app__work-hover app__flex'
-                        //         >
-                        //             <a href='#' target='_blank' rel="noreferrer">
-                        //                 <motion.div
-                        //                 whileInView={{scale: [0, 1]}}
-                        //                 whileHover={{scale: [1,0.9]}}
-                        //                 transition={{duration: 0.25}}
-                        //                 className='app__flex'
-                        //                 >
-                        //                     <AiFillEye/>
-                        //                 </motion.div>
-                        //             </a>
-                        //             <a href='#' target='_blank' rel="noreferrer">
-                        //                 <motion.div
-                        //                 whileInView={{scale: [0, 1]}}
-                        //                 whileHover={{scale: [1,0.9]}}
-                        //                 transition={{duration: 0.25}}
-                        //                 className='app__flex'
-                        //                 >
-                        //                     <AiFillGithub/>
-                        //                 </motion.div>
-                        //             </a>
-                        //         </motion.div>
-                        //     </div>
-                        //
-                        //     <div className='app__work-content app__flex'>
-                        //         <h4 className='bold-text'>{about.title}</h4>
-                        //         <p className='p-text' style={{marginTop: 10, textAlign: "center"}}>{about.description}</p>
-                        //
-                        //         <div className='app__work-tag app__flex'>
-                        //             <p className='p-text'>#</p>
-                        //         </div>
-                        //     </div>
-                        // </div>
-
-
-
-
-
                     ))}
                 </motion.div>
-
-                {/*<Tilt*/}
-                {/*    options={{*/}
-                {/*        max: 45,*/}
-                {/*        scale: 1,*/}
-                {/*        speed: 450,*/}
-                {/*    }}*/}
-                {/*    className='xs:w-[250px] w-full'>*/}
-                {/*    <motion.div*/}
-                {/*        variants={fadeIn("right", "spring", index * 0.5, 0.75)}*/}
-                {/*        className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'*/}
-                {/*    >*/}
-                {/*        <div*/}
-
-                {/*            className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'*/}
-                {/*        >*/}
-                {/*            <img*/}
-                {/*                src=""*/}
-                {/*                alt='web-development'*/}
-                {/*                className='w-16 h-16 object-contain'*/}
-                {/*            />*/}
-
-                {/*            <h3 className='text-white text-[20px] font-bold text-center'>*/}
-                {/*                Test*/}
-                {/*            </h3>*/}
-                {/*        </div>*/}
-                {/*    </motion.div>*/}
-                {/*</Tilt>*/}
 
             </div>
         </div>
@@ -268,8 +147,6 @@ const VideoHeader = () => {
     );
 };
 
-// export default VideoHeader;
 
 export default VideoWrap(VideoHeader, 'home');
 
-// export default VideoWrap(VideoHeader, 'home');

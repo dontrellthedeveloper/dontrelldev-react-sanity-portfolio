@@ -13,6 +13,20 @@
     --gray-color: #6b7688;
     --brown-color: #46364a;
     --white-color: #ffffff;
+
+
+    /* DARK THEME */
+    --dp00: #121212;
+    --dp01: #1E1E1E;
+    --dp02: #222222;
+    --dp03: #242424;
+    --dp04: #272727;
+    --dp06: #2C2C2C;
+    --dp08: #2D2D2D;
+    --dp12: #333333;
+    --dp16: #353535;
+    --dp24: #515151;
+    --dark-hover:#808080FF;
 }
 
 * {
