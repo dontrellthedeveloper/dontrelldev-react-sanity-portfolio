@@ -718,6 +718,39 @@
   }
 }
 
+#light .main-skills__items {
+  background: #fff;
+}
+
+#dark .main-skills__items {
+  background-color: var(--dp02);
+}
+
+
+.portfolio-page__bg {
+  background-color: var(--primary-color);
+}
+
+#light .portfolio-page__bg {
+  background-color: var(--primary-color);
+}
+
+#dark .portfolio-page__bg {
+  background-color: var(--dp00);
+}
+
+.skill-page__bg {
+  background-color: var(--white-color);
+}
+
+#light .skill-page__bg {
+  background-color: var(--white-color);
+}
+
+#dark .skill-page__bg {
+  background-color: var(--dp01);
+}
+
 
 code {
   transform: translateZ(0);

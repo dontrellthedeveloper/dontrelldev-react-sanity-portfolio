@@ -5,7 +5,7 @@ import {Helmet} from "react-helmet";
 
 const SkillPage = () => {
     return (
-        <div style={{paddingTop: '40px', backgroundColor: '#fff'}}>
+        <div style={{paddingTop: '40px'}} className='skill-page__bg'>
             <Helmet>
                 <title>Dontrell's Skills</title>
                 <meta

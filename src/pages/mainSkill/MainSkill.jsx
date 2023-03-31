@@ -166,7 +166,7 @@ const MainSkill = () => {
             </div>
 
 
-            <div className='app__flex' style={{height: '350px', width: '350px', backgroundColor:'#fff', display: 'block', margin: '30px auto', borderRadius: '10px' }} >
+            <div className='app__flex single-skill__canvas' style={{height: '350px', width: '350px', display: 'block', margin: '30px auto', borderRadius: '10px' }} >
                 <BallCanvas icon={urlFor(mainSkill.imgUrl)} />
             </div>
 
