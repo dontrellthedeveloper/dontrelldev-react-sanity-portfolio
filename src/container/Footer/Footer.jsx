@@ -73,26 +73,26 @@ const Footer = () => {
                         method='POST'
                         className="app__footer-form app__flex">
                         <div className="app__flex">
-                            <input className="p-text" type="text" placeholder="Name..." name="name"
+                            <input className="p-text footer__input-style" type="text" placeholder="Name..." name="name"
                                 // value={username}
                                 // onChange={handleChangeInput}
                             />
                         </div>
                         <div className="app__flex">
-                            <input className="p-text" type="email" placeholder="Email..." name="email"
+                            <input className="p-text footer__input-style" type="email" placeholder="Email..." name="email"
                                 // value={email}
                                 // onChange={handleChangeInput}
                             />
                         </div>
                         <div className="app__flex">
-                            <input className="p-text" type="text" placeholder="Phone Number..." name="phone"
+                            <input className="p-text footer__input-style" type="text" placeholder="Phone Number..." name="phone"
                                 // value={email}
                                 // onChange={handleChangeInput}
                             />
                         </div>
                         <div>
                     <textarea
-                        className="p-text"
+                        className="p-text footer__input-style"
                         placeholder="Message..."
                         // value={message}
                         name="message"

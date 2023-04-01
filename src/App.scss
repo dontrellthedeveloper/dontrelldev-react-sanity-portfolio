@@ -195,6 +195,46 @@
   }
 }
 
+
+
+#light .video__social {
+  a {
+    background-color: var(--white-color);
+    border: 1px solid var(--lightGray-color);
+    svg {
+      color: var(--gray-color);
+    }
+    &:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+
+      svg {
+        color: var(--white-color);
+      }
+    }
+  }
+}
+
+#dark .video__social {
+  a {
+    background-color: var(--dp01);
+    border: 1px solid var(--white-color);
+    svg {
+      color: var(--white-color);
+    }
+    &:hover {
+      background-color: var(--dp24);
+      border-color: var(--dp24);
+
+      svg {
+        color: var(--white-color);
+      }
+    }
+  }
+}
+
+
+
 .video-copyright {
   width: 100%;
   padding: 2rem 0 0;
@@ -471,6 +511,44 @@
   }
 }
 
+
+
+#light .app__social {
+  a {
+    background-color: var(--white-color);
+    border: 1px solid var(--lightGray-color);
+    svg {
+      color: var(--gray-color);
+    }
+    &:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+
+      svg {
+        color: var(--white-color);
+      }
+    }
+  }
+}
+
+#dark .app__social {
+  a {
+    background-color: var(--dp01);
+    border: 1px solid var(--white-color);
+    svg {
+      color: var(--white-color);
+    }
+    &:hover {
+      background-color: var(--dp24);
+      border-color: var(--dp24);
+
+      svg {
+        color: var(--white-color);
+      }
+    }
+  }
+}
+
 .app__navigation {
   display: flex;
   justify-content: center;
@@ -729,6 +807,11 @@
 
 .portfolio-page__bg {
   background-color: var(--primary-color);
+  padding-top: 40px;
+
+  @media(max-width: 599px) {
+    padding-top: 0;
+  }
 }
 
 #light .portfolio-page__bg {
@@ -741,6 +824,9 @@
 
 .skill-page__bg {
   background-color: var(--white-color);
+  padding-top: 40px;
+
+
 }
 
 #light .skill-page__bg {
@@ -798,4 +884,31 @@ span.linenumber { display: none !important; }
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 80px;
+}
+
+
+
+
+.video__container {
+  @media(max-width: 599px) {
+    display: none;
+  }
+}
+
+#work {
+  @media(max-width: 599px) {
+    padding-top: 40px;
+  }
+}
+
+.app__work-filter {
+  @media(max-width: 599px) {
+    display: none !important;
+  }
+}
+
+.app__work-portfolio {
+  @media(max-width: 599px) {
+    padding-top: 20px !important;
+  }
 }

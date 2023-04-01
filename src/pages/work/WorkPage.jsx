@@ -5,7 +5,7 @@ import {Helmet} from "react-helmet";
 
 const WorkPage = () => {
     return (
-        <div style={{paddingTop: '40px'}} className='portfolio-page__bg'>
+        <div  className='portfolio-page__bg'>
             <Helmet>
                 <title>Dontrell's Portfolio</title>
                 <meta

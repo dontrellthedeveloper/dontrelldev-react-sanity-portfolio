@@ -62,17 +62,41 @@
   background-color: #f2f7fb;
 }
 
+#light .app__footer-cards .app__footer-card {
+  background-color: #f2f7fb;
+}
+
+#dark .app__footer-cards .app__footer-card {
+  background-color: var(--dp01);
+}
+
 .app__footer-cards .app__footer-card {
   box-shadow: 0 0 25px #f2f7fb;
 }
 
-//.app__footer-cards .app__footer-card:last-child {
-//  background-color: #f2f7fb;
-//}
-//
-//.app__footer-cards .app__footer-card:last-child:hover {
-//  box-shadow: 0 0 25px #f2f7fb;
-//}
+#light .app__footer-cards .app__footer-card {
+  box-shadow: 0 0 25px #f2f7fb;
+}
+
+#dark .app__footer-cards .app__footer-card {
+  box-shadow: 0 0 25px #f2f7fb;
+}
+
+.footer__input-style {
+
+}
+
+#light .footer__input-style {
+
+}
+
+#dark .footer__input-style {
+  background-color: var(--dp12);
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+
 
 .app__footer-form {
   width: 60%;
@@ -134,5 +158,24 @@
   @media screen and (max-width: 768px) {
     width: 100%;
     margin: 1rem 0;
+  }
+}
+
+
+#light .app__footer-form button {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+
+  &:hover {
+    background-color: #2430af;
+  }
+}
+
+#dark .app__footer-form button {
+  background-color: var(--dp16);
+  color: var(--white-color);
+
+  &:hover {
+    background-color: var(--dark-hover);
   }
 }
