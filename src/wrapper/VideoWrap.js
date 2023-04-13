@@ -13,7 +13,7 @@ const VideoWrap = (Component, idName, classNames) => function HOC() {
                 className='video__wrapper video__flex'>
                 <Component/>
 
-                <div className='video-copyright'>
+                <div className='copyright'>
                     <p className='p-text'>@2023 Dontrell Washington</p>
                     <p className='p-text'>All rights reserved</p>
                 </div>

@@ -22,11 +22,13 @@ const Navbar = ({toggleTheme, theme}) => {
     return (
         <nav className={scroll ? 'app__navbar-scroll' : 'app__navbar'}>
             <div style={{display: 'flex', maxWidth: '1200px', width: '100%', margin: '0 auto'}}>
+                <NavLink to='/'>
                 <div className='app__navbar-logo'>
-                    <NavLink to='/'>
-                        <img src={theme === 'light' ? images.logoDark : images.logoLight} alt="logo"/>
-                    </NavLink>
+
+                        <img src={theme === 'light' ? images.logoDark2 : images.logoLight2} alt="logo"/>
+
                 </div>
+                </NavLink>
                 <ul className='app__navbar-links'>
 
 

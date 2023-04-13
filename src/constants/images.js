@@ -32,7 +32,9 @@ import logo from '../assets/logo.png';
 import logo2 from '../assets/logo-2.png';
 import logo3 from '../assets/logo-3.png';
 import logoLight from '../assets/logo-light.png';
+import logoLight2 from '../assets/logo2-light.png';
 import logoDark from '../assets/logo-dark.png';
+import logoDark2 from '../assets/logo2-dark.png';
 import logo4 from '../assets/logo-4.png';
 import gmail from '../assets/gmail.png';
 import email2 from '../assets/email2.png';
@@ -80,6 +82,8 @@ export default {
     logo4,
     logoLight,
     logoDark,
+    logoLight2,
+    logoDark2,
     adidas,
     amazon,
     asus,
