@@ -31,7 +31,7 @@ const App = () => {
         <ThemeContext.Provider value={{toggleTheme}}>
             <div className='app' id={theme}>
                 <Helmet>
-                    <title>Web Development by Dontrell</title>
+                    <title>Web Development by Dontrell Washington</title>
                     <meta
                         name='description'
                         content='Web development portfolio for Dontrell Washington'
@@ -40,7 +40,7 @@ const App = () => {
                     <link
                         rel="apple-touch-icon"
                         sizes="180x180"
-                        href="%PUBLIC_URL%/dev2.png"
+                        href="%PUBLIC_URL%/fav.png"
                     />
                 </Helmet>
                 <Navbar toggleTheme={toggleTheme} theme={theme}/>

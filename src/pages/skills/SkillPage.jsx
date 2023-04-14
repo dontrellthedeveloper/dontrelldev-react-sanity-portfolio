@@ -16,7 +16,7 @@ const SkillPage = () => {
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
-                    href="%PUBLIC_URL%/dev2.png"
+                    href="%PUBLIC_URL%/fav.png"
                 />
             </Helmet>
             <Skills/>
